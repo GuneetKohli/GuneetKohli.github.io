@@ -1,117 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
-<head>
-    <title>Predicting Board Game Reviews using KMeans Clustering & Linear Regression - Guneet's Blog</title>
-    <!-- Using the latest rendering mode for IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-<link rel="canonical" href="http://GuneetKohli.github.io/board-game-reviews.html">
-
-        <meta name="author" content="Guneet Singh Kohli" />
-        <meta name="keywords" content="KMeans Clustering,Linear Regression" />
-        <meta name="description" content="Board games have been making a comeback lately, and deeper, more strategic boardgames, like Settlers of Catan have become hugely popular. BoardGameGeek is a popular site where these types of board games are discussed and reviewed. Here we have a dataset that contains 80000 board games and their associated review scores. The data was scraped from BoardGameGeek and compiled into CSV format by Sean Beck." />
-
-        <meta property="og:site_name" content="Guneet's Blog" />
-        <meta property="og:type" content="article"/>
-        <meta property="og:title" content="Predicting Board Game Reviews using KMeans Clustering &amp; Linear Regression"/>
-        <meta property="og:url" content="http://GuneetKohli.github.io/board-game-reviews.html"/>
-        <meta property="og:description" content="Board games have been making a comeback lately, and deeper, more strategic boardgames, like Settlers of Catan have become hugely popular. BoardGameGeek is a popular site where these types of board games are discussed and reviewed. Here we have a dataset that contains 80000 board games and their associated review scores. The data was scraped from BoardGameGeek and compiled into CSV format by Sean Beck."/>
-        <meta property="article:published_time" content="2016-06-08" />
-            <meta property="article:section" content="Machine Learning" />
-            <meta property="article:tag" content="KMeans Clustering" />
-            <meta property="article:tag" content="Linear Regression" />
-            <meta property="article:author" content="Guneet Singh Kohli" />
-
-
-    <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://GuneetKohli.github.io/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="http://GuneetKohli.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
-
-    <link href="http://GuneetKohli.github.io/theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://GuneetKohli.github.io/theme/css/style.css" type="text/css"/>
-
-        <link href="http://GuneetKohli.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Guneet's Blog ATOM Feed"/>
-
-
-
-        <link href="http://GuneetKohli.github.io/feeds/machine-learning.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Guneet's Blog Machine Learning ATOM Feed"/>
-
-</head>
-<body>
-
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="http://GuneetKohli.github.io/" class="navbar-brand">
-Guneet's Blog            </a>
-        </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-                        <li >
-                            <a href="http://GuneetKohli.github.io/category/about-me.html">About me</a>
-                        </li>
-                        <li >
-                            <a href="http://GuneetKohli.github.io/category/data-wrangling.html">Data wrangling</a>
-                        </li>
-                        <li class="active">
-                            <a href="http://GuneetKohli.github.io/category/machine-learning.html">Machine learning</a>
-                        </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-</div> <!-- /.navbar -->
-<!-- Banner -->
-<!-- End Banner -->
-<div class="container">
-    <div class="row">
-        <div class="col-sm-9">
-    <section id="content">
-        <article>
-            <header class="page-header">
-                <h1>
-                    <a href="http://GuneetKohli.github.io/board-game-reviews.html"
-                       rel="bookmark"
-                       title="Permalink to Predicting Board Game Reviews using KMeans Clustering & Linear Regression">
-                        Predicting Board Game Reviews using KMeans Clustering & Linear Regression
-                    </a>
-                </h1>
-            </header>
-            <div class="entry-content">
-                <div class="panel">
-                    <div class="panel-body">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-06-08T20:00:00-07:00"> Wed 08 June 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="http://GuneetKohli.github.io/tag/kmeans-clustering.html">KMeans Clustering</a>
-        /
-	<a href="http://GuneetKohli.github.io/tag/linear-regression.html">Linear Regression</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                </div>
-                <style type="text/css">/*!
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Guneet's Blog</title><link href="http://GuneetKohli.github.io/" rel="alternate"></link><link href="http://GuneetKohli.github.io/feeds/machine-learning.atom.xml" rel="self"></link><id>http://GuneetKohli.github.io/</id><updated>2016-06-08T20:00:00-07:00</updated><entry><title>Predicting Board Game Reviews using KMeans Clustering &amp; Linear Regression</title><link href="http://GuneetKohli.github.io/board-game-reviews.html" rel="alternate"></link><published>2016-06-08T20:00:00-07:00</published><author><name>Guneet Singh Kohli</name></author><id>tag:GuneetKohli.github.io,2016-06-08:board-game-reviews.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -342,7 +230,7 @@ div.unrecognized_cell .inner_cell a:hover {
   text-decoration: none;
 }
 @media (max-width: 540px) {
-  div.unrecognized_cell > div.prompt {
+  div.unrecognized_cell &gt; div.prompt {
     display: none;
   }
 }
@@ -395,19 +283,19 @@ div.input_prompt {
   color: #303F9F;
   border-top: 1px solid transparent;
 }
-div.input_area > div.highlight {
+div.input_area &gt; div.highlight {
   margin: 0.4em;
   border: none;
   padding: 0px;
   background-color: transparent;
 }
-div.input_area > div.highlight > pre {
+div.input_area &gt; div.highlight &gt; pre {
   margin: 0px;
   border: none;
   padding: 0px;
   background-color: transparent;
 }
-/* The following gets added to the <head> if it is detected that the user has a
+/* The following gets added to the &lt;head&gt; if it is detected that the user has a
  * monospace font with inconsistent normal/bold/italic height.  See
  * notebookmain.js.  Such fonts will have keywords vertically offset with
  * respect to the rest of the text.  The user should select a better font.
@@ -453,7 +341,7 @@ div.input_area > div.highlight > pre {
 }
 /*
 
-Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Original style from softwaremaniacs.org (c) Ivan Sagalaev &lt;Maniac@SoftwareManiacs.Org&gt;
 Adapted from GitHub theme
 
 */
@@ -915,7 +803,7 @@ div.text_cell {
   align-items: stretch;
 }
 @media (max-width: 540px) {
-  div.text_cell > div.prompt {
+  div.text_cell &gt; div.prompt {
     display: none;
   }
 }
@@ -980,8 +868,8 @@ h6:hover .anchor-link {
   font-size: 100%;
   font-style: italic;
 }
-</style>
-<style type="text/css">.highlight .hll { background-color: #ffffcc }
+&lt;/style&gt;
+&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
@@ -1045,8 +933,8 @@ h6:hover .anchor-link {
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
-<style type="text/css">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
+&lt;style type="text/css"&gt;
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
 .ansi-black-fg { color: #3E424D; }
 .ansi-black-bg { background-color: #3E424D; }
@@ -1082,414 +970,414 @@ h6:hover .anchor-link {
 .ansi-white-intense-bg { background-color: #A1A6B2; }
 
 .ansi-bold { font-weight: bold; }
-</style>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Board games have been making a comeback lately, and deeper, more strategic boardgames, like Settlers of Catan have become hugely popular. BoardGameGeek is a popular site where these types of board games are discussed and reviewed.</p>
-<p>Here we have a dataset that contains 80000 board games and their associated review scores. The data was scraped from BoardGameGeek and compiled into CSV format by Sean Beck.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's preview the data and look at some interesting columns.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [73]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">board_games</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"board_games.csv"</span><span class="p">)</span>
-<span class="n">board_games</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[73]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>id</th>
-<th>type</th>
-<th>name</th>
-<th>yearpublished</th>
-<th>minplayers</th>
-<th>maxplayers</th>
-<th>playingtime</th>
-<th>minplaytime</th>
-<th>maxplaytime</th>
-<th>minage</th>
-<th>users_rated</th>
-<th>average_rating</th>
-<th>bayes_average_rating</th>
-<th>total_owners</th>
-<th>total_traders</th>
-<th>total_wanters</th>
-<th>total_wishers</th>
-<th>total_comments</th>
-<th>total_weights</th>
-<th>average_weight</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>12333</td>
-<td>boardgame</td>
-<td>Twilight Struggle</td>
-<td>2005.0</td>
-<td>2.0</td>
-<td>2.0</td>
-<td>180.0</td>
-<td>180.0</td>
-<td>180.0</td>
-<td>13.0</td>
-<td>20113</td>
-<td>8.33774</td>
-<td>8.22186</td>
-<td>26647</td>
-<td>372</td>
-<td>1219</td>
-<td>5865</td>
-<td>5347</td>
-<td>2562</td>
-<td>3.4785</td>
-</tr>
-<tr>
-<th>1</th>
-<td>120677</td>
-<td>boardgame</td>
-<td>Terra Mystica</td>
-<td>2012.0</td>
-<td>2.0</td>
-<td>5.0</td>
-<td>150.0</td>
-<td>60.0</td>
-<td>150.0</td>
-<td>12.0</td>
-<td>14383</td>
-<td>8.28798</td>
-<td>8.14232</td>
-<td>16519</td>
-<td>132</td>
-<td>1586</td>
-<td>6277</td>
-<td>2526</td>
-<td>1423</td>
-<td>3.8939</td>
-</tr>
-<tr>
-<th>2</th>
-<td>102794</td>
-<td>boardgame</td>
-<td>Caverna: The Cave Farmers</td>
-<td>2013.0</td>
-<td>1.0</td>
-<td>7.0</td>
-<td>210.0</td>
-<td>30.0</td>
-<td>210.0</td>
-<td>12.0</td>
-<td>9262</td>
-<td>8.28994</td>
-<td>8.06886</td>
-<td>12230</td>
-<td>99</td>
-<td>1476</td>
-<td>5600</td>
-<td>1700</td>
-<td>777</td>
-<td>3.7761</td>
-</tr>
-<tr>
-<th>3</th>
-<td>25613</td>
-<td>boardgame</td>
-<td>Through the Ages: A Story of Civilization</td>
-<td>2006.0</td>
-<td>2.0</td>
-<td>4.0</td>
-<td>240.0</td>
-<td>240.0</td>
-<td>240.0</td>
-<td>12.0</td>
-<td>13294</td>
-<td>8.20407</td>
-<td>8.05804</td>
-<td>14343</td>
-<td>362</td>
-<td>1084</td>
-<td>5075</td>
-<td>3378</td>
-<td>1642</td>
-<td>4.1590</td>
-</tr>
-<tr>
-<th>4</th>
-<td>3076</td>
-<td>boardgame</td>
-<td>Puerto Rico</td>
-<td>2002.0</td>
-<td>2.0</td>
-<td>5.0</td>
-<td>150.0</td>
-<td>90.0</td>
-<td>150.0</td>
-<td>12.0</td>
-<td>39883</td>
-<td>8.14261</td>
-<td>8.04524</td>
-<td>44362</td>
-<td>795</td>
-<td>861</td>
-<td>5414</td>
-<td>9173</td>
-<td>5213</td>
-<td>3.2943</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Each row represents a single board game and has descriptive statistics about the board game, as well as review information. Some of the interesting columns are :</p>
-<ul>
-<li><b>name</b> -- name of the board game. </li>
-<li><b>playingtime</b> -- the playing time (given by the manufacturer). </li>
-<li><b>minplaytime</b>-- the minimum playing time (given by the manufacturer). </li>
-<li><b>maxplaytime</b> -- the maximum playing time (given by the manufacturer). </li>
-<li><b>minage</b> -- the minimum recommended age to play. </li>
-<li><b>users_rated</b> -- the number of users who rated the game. </li>
-<li><b>average_rating</b> -- the average rating given to the game by users. (0-10)</li>
-<li><b>total_weights</b> -- Number of weights given by users. Weight is a subjective measure that is made up by          BoardGameGeek. It describes how "deep" or involved a game is. </li>
-<li><b>average_weight</b> -- the average of all the subjective weights (0-5). </li>
-</ul><p>One interesting machine learning task might be to predict <b> average_rating </b> using the other columns. The dataset contains quite a few missing values, and rows where there are no reviews, where the score is 0. Let's remove them.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [74]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">board_games</span> <span class="o">=</span> <span class="n">board_games</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">board_games</span> <span class="o">=</span> <span class="n">board_games</span><span class="p">[</span><span class="n">board_games</span><span class="p">[</span><span class="s2">"users_rated"</span><span class="p">]</span><span class="o">></span><span class="mi">0</span><span class="p">]</span>
+&lt;/style&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Board games have been making a comeback lately, and deeper, more strategic boardgames, like Settlers of Catan have become hugely popular. BoardGameGeek is a popular site where these types of board games are discussed and reviewed.&lt;/p&gt;
+&lt;p&gt;Here we have a dataset that contains 80000 board games and their associated review scores. The data was scraped from BoardGameGeek and compiled into CSV format by Sean Beck.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Let's preview the data and look at some interesting columns.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [73]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;span class="n"&gt;board_games&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"board_games.csv"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;board_games&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[73]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;table border="1" class="dataframe"&gt;
+&lt;thead&gt;
+&lt;tr style="text-align: right;"&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;id&lt;/th&gt;
+&lt;th&gt;type&lt;/th&gt;
+&lt;th&gt;name&lt;/th&gt;
+&lt;th&gt;yearpublished&lt;/th&gt;
+&lt;th&gt;minplayers&lt;/th&gt;
+&lt;th&gt;maxplayers&lt;/th&gt;
+&lt;th&gt;playingtime&lt;/th&gt;
+&lt;th&gt;minplaytime&lt;/th&gt;
+&lt;th&gt;maxplaytime&lt;/th&gt;
+&lt;th&gt;minage&lt;/th&gt;
+&lt;th&gt;users_rated&lt;/th&gt;
+&lt;th&gt;average_rating&lt;/th&gt;
+&lt;th&gt;bayes_average_rating&lt;/th&gt;
+&lt;th&gt;total_owners&lt;/th&gt;
+&lt;th&gt;total_traders&lt;/th&gt;
+&lt;th&gt;total_wanters&lt;/th&gt;
+&lt;th&gt;total_wishers&lt;/th&gt;
+&lt;th&gt;total_comments&lt;/th&gt;
+&lt;th&gt;total_weights&lt;/th&gt;
+&lt;th&gt;average_weight&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;0&lt;/th&gt;
+&lt;td&gt;12333&lt;/td&gt;
+&lt;td&gt;boardgame&lt;/td&gt;
+&lt;td&gt;Twilight Struggle&lt;/td&gt;
+&lt;td&gt;2005.0&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;180.0&lt;/td&gt;
+&lt;td&gt;180.0&lt;/td&gt;
+&lt;td&gt;180.0&lt;/td&gt;
+&lt;td&gt;13.0&lt;/td&gt;
+&lt;td&gt;20113&lt;/td&gt;
+&lt;td&gt;8.33774&lt;/td&gt;
+&lt;td&gt;8.22186&lt;/td&gt;
+&lt;td&gt;26647&lt;/td&gt;
+&lt;td&gt;372&lt;/td&gt;
+&lt;td&gt;1219&lt;/td&gt;
+&lt;td&gt;5865&lt;/td&gt;
+&lt;td&gt;5347&lt;/td&gt;
+&lt;td&gt;2562&lt;/td&gt;
+&lt;td&gt;3.4785&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;td&gt;120677&lt;/td&gt;
+&lt;td&gt;boardgame&lt;/td&gt;
+&lt;td&gt;Terra Mystica&lt;/td&gt;
+&lt;td&gt;2012.0&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;5.0&lt;/td&gt;
+&lt;td&gt;150.0&lt;/td&gt;
+&lt;td&gt;60.0&lt;/td&gt;
+&lt;td&gt;150.0&lt;/td&gt;
+&lt;td&gt;12.0&lt;/td&gt;
+&lt;td&gt;14383&lt;/td&gt;
+&lt;td&gt;8.28798&lt;/td&gt;
+&lt;td&gt;8.14232&lt;/td&gt;
+&lt;td&gt;16519&lt;/td&gt;
+&lt;td&gt;132&lt;/td&gt;
+&lt;td&gt;1586&lt;/td&gt;
+&lt;td&gt;6277&lt;/td&gt;
+&lt;td&gt;2526&lt;/td&gt;
+&lt;td&gt;1423&lt;/td&gt;
+&lt;td&gt;3.8939&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;td&gt;102794&lt;/td&gt;
+&lt;td&gt;boardgame&lt;/td&gt;
+&lt;td&gt;Caverna: The Cave Farmers&lt;/td&gt;
+&lt;td&gt;2013.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;7.0&lt;/td&gt;
+&lt;td&gt;210.0&lt;/td&gt;
+&lt;td&gt;30.0&lt;/td&gt;
+&lt;td&gt;210.0&lt;/td&gt;
+&lt;td&gt;12.0&lt;/td&gt;
+&lt;td&gt;9262&lt;/td&gt;
+&lt;td&gt;8.28994&lt;/td&gt;
+&lt;td&gt;8.06886&lt;/td&gt;
+&lt;td&gt;12230&lt;/td&gt;
+&lt;td&gt;99&lt;/td&gt;
+&lt;td&gt;1476&lt;/td&gt;
+&lt;td&gt;5600&lt;/td&gt;
+&lt;td&gt;1700&lt;/td&gt;
+&lt;td&gt;777&lt;/td&gt;
+&lt;td&gt;3.7761&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;td&gt;25613&lt;/td&gt;
+&lt;td&gt;boardgame&lt;/td&gt;
+&lt;td&gt;Through the Ages: A Story of Civilization&lt;/td&gt;
+&lt;td&gt;2006.0&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;4.0&lt;/td&gt;
+&lt;td&gt;240.0&lt;/td&gt;
+&lt;td&gt;240.0&lt;/td&gt;
+&lt;td&gt;240.0&lt;/td&gt;
+&lt;td&gt;12.0&lt;/td&gt;
+&lt;td&gt;13294&lt;/td&gt;
+&lt;td&gt;8.20407&lt;/td&gt;
+&lt;td&gt;8.05804&lt;/td&gt;
+&lt;td&gt;14343&lt;/td&gt;
+&lt;td&gt;362&lt;/td&gt;
+&lt;td&gt;1084&lt;/td&gt;
+&lt;td&gt;5075&lt;/td&gt;
+&lt;td&gt;3378&lt;/td&gt;
+&lt;td&gt;1642&lt;/td&gt;
+&lt;td&gt;4.1590&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;4&lt;/th&gt;
+&lt;td&gt;3076&lt;/td&gt;
+&lt;td&gt;boardgame&lt;/td&gt;
+&lt;td&gt;Puerto Rico&lt;/td&gt;
+&lt;td&gt;2002.0&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;5.0&lt;/td&gt;
+&lt;td&gt;150.0&lt;/td&gt;
+&lt;td&gt;90.0&lt;/td&gt;
+&lt;td&gt;150.0&lt;/td&gt;
+&lt;td&gt;12.0&lt;/td&gt;
+&lt;td&gt;39883&lt;/td&gt;
+&lt;td&gt;8.14261&lt;/td&gt;
+&lt;td&gt;8.04524&lt;/td&gt;
+&lt;td&gt;44362&lt;/td&gt;
+&lt;td&gt;795&lt;/td&gt;
+&lt;td&gt;861&lt;/td&gt;
+&lt;td&gt;5414&lt;/td&gt;
+&lt;td&gt;9173&lt;/td&gt;
+&lt;td&gt;5213&lt;/td&gt;
+&lt;td&gt;3.2943&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Each row represents a single board game and has descriptive statistics about the board game, as well as review information. Some of the interesting columns are :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;name&lt;/b&gt; -- name of the board game. &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;playingtime&lt;/b&gt; -- the playing time (given by the manufacturer). &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;minplaytime&lt;/b&gt;-- the minimum playing time (given by the manufacturer). &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;maxplaytime&lt;/b&gt; -- the maximum playing time (given by the manufacturer). &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;minage&lt;/b&gt; -- the minimum recommended age to play. &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;users_rated&lt;/b&gt; -- the number of users who rated the game. &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;average_rating&lt;/b&gt; -- the average rating given to the game by users. (0-10)&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;total_weights&lt;/b&gt; -- Number of weights given by users. Weight is a subjective measure that is made up by          BoardGameGeek. It describes how "deep" or involved a game is. &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;average_weight&lt;/b&gt; -- the average of all the subjective weights (0-5). &lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;One interesting machine learning task might be to predict &lt;b&gt; average_rating &lt;/b&gt; using the other columns. The dataset contains quite a few missing values, and rows where there are no reviews, where the score is 0. Let's remove them.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [74]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;board_games&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;board_games&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dropna&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;board_games&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;board_games&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;board_games&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"users_rated"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;&gt;&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 
-<span class="n">board_games</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[74]:</div>
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>id</th>
-<th>type</th>
-<th>name</th>
-<th>yearpublished</th>
-<th>minplayers</th>
-<th>maxplayers</th>
-<th>playingtime</th>
-<th>minplaytime</th>
-<th>maxplaytime</th>
-<th>minage</th>
-<th>users_rated</th>
-<th>average_rating</th>
-<th>bayes_average_rating</th>
-<th>total_owners</th>
-<th>total_traders</th>
-<th>total_wanters</th>
-<th>total_wishers</th>
-<th>total_comments</th>
-<th>total_weights</th>
-<th>average_weight</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>0</th>
-<td>12333</td>
-<td>boardgame</td>
-<td>Twilight Struggle</td>
-<td>2005.0</td>
-<td>2.0</td>
-<td>2.0</td>
-<td>180.0</td>
-<td>180.0</td>
-<td>180.0</td>
-<td>13.0</td>
-<td>20113</td>
-<td>8.33774</td>
-<td>8.22186</td>
-<td>26647</td>
-<td>372</td>
-<td>1219</td>
-<td>5865</td>
-<td>5347</td>
-<td>2562</td>
-<td>3.4785</td>
-</tr>
-<tr>
-<th>1</th>
-<td>120677</td>
-<td>boardgame</td>
-<td>Terra Mystica</td>
-<td>2012.0</td>
-<td>2.0</td>
-<td>5.0</td>
-<td>150.0</td>
-<td>60.0</td>
-<td>150.0</td>
-<td>12.0</td>
-<td>14383</td>
-<td>8.28798</td>
-<td>8.14232</td>
-<td>16519</td>
-<td>132</td>
-<td>1586</td>
-<td>6277</td>
-<td>2526</td>
-<td>1423</td>
-<td>3.8939</td>
-</tr>
-<tr>
-<th>2</th>
-<td>102794</td>
-<td>boardgame</td>
-<td>Caverna: The Cave Farmers</td>
-<td>2013.0</td>
-<td>1.0</td>
-<td>7.0</td>
-<td>210.0</td>
-<td>30.0</td>
-<td>210.0</td>
-<td>12.0</td>
-<td>9262</td>
-<td>8.28994</td>
-<td>8.06886</td>
-<td>12230</td>
-<td>99</td>
-<td>1476</td>
-<td>5600</td>
-<td>1700</td>
-<td>777</td>
-<td>3.7761</td>
-</tr>
-<tr>
-<th>3</th>
-<td>25613</td>
-<td>boardgame</td>
-<td>Through the Ages: A Story of Civilization</td>
-<td>2006.0</td>
-<td>2.0</td>
-<td>4.0</td>
-<td>240.0</td>
-<td>240.0</td>
-<td>240.0</td>
-<td>12.0</td>
-<td>13294</td>
-<td>8.20407</td>
-<td>8.05804</td>
-<td>14343</td>
-<td>362</td>
-<td>1084</td>
-<td>5075</td>
-<td>3378</td>
-<td>1642</td>
-<td>4.1590</td>
-</tr>
-<tr>
-<th>4</th>
-<td>3076</td>
-<td>boardgame</td>
-<td>Puerto Rico</td>
-<td>2002.0</td>
-<td>2.0</td>
-<td>5.0</td>
-<td>150.0</td>
-<td>90.0</td>
-<td>150.0</td>
-<td>12.0</td>
-<td>39883</td>
-<td>8.14261</td>
-<td>8.04524</td>
-<td>44362</td>
-<td>795</td>
-<td>861</td>
-<td>5414</td>
-<td>9173</td>
-<td>5213</td>
-<td>3.2943</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Since we are trying to predict the <b> average_rating </b> column using other columns let's visualize and explore it a little.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [75]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+&lt;span class="n"&gt;board_games&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[74]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;table border="1" class="dataframe"&gt;
+&lt;thead&gt;
+&lt;tr style="text-align: right;"&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;id&lt;/th&gt;
+&lt;th&gt;type&lt;/th&gt;
+&lt;th&gt;name&lt;/th&gt;
+&lt;th&gt;yearpublished&lt;/th&gt;
+&lt;th&gt;minplayers&lt;/th&gt;
+&lt;th&gt;maxplayers&lt;/th&gt;
+&lt;th&gt;playingtime&lt;/th&gt;
+&lt;th&gt;minplaytime&lt;/th&gt;
+&lt;th&gt;maxplaytime&lt;/th&gt;
+&lt;th&gt;minage&lt;/th&gt;
+&lt;th&gt;users_rated&lt;/th&gt;
+&lt;th&gt;average_rating&lt;/th&gt;
+&lt;th&gt;bayes_average_rating&lt;/th&gt;
+&lt;th&gt;total_owners&lt;/th&gt;
+&lt;th&gt;total_traders&lt;/th&gt;
+&lt;th&gt;total_wanters&lt;/th&gt;
+&lt;th&gt;total_wishers&lt;/th&gt;
+&lt;th&gt;total_comments&lt;/th&gt;
+&lt;th&gt;total_weights&lt;/th&gt;
+&lt;th&gt;average_weight&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;0&lt;/th&gt;
+&lt;td&gt;12333&lt;/td&gt;
+&lt;td&gt;boardgame&lt;/td&gt;
+&lt;td&gt;Twilight Struggle&lt;/td&gt;
+&lt;td&gt;2005.0&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;180.0&lt;/td&gt;
+&lt;td&gt;180.0&lt;/td&gt;
+&lt;td&gt;180.0&lt;/td&gt;
+&lt;td&gt;13.0&lt;/td&gt;
+&lt;td&gt;20113&lt;/td&gt;
+&lt;td&gt;8.33774&lt;/td&gt;
+&lt;td&gt;8.22186&lt;/td&gt;
+&lt;td&gt;26647&lt;/td&gt;
+&lt;td&gt;372&lt;/td&gt;
+&lt;td&gt;1219&lt;/td&gt;
+&lt;td&gt;5865&lt;/td&gt;
+&lt;td&gt;5347&lt;/td&gt;
+&lt;td&gt;2562&lt;/td&gt;
+&lt;td&gt;3.4785&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;td&gt;120677&lt;/td&gt;
+&lt;td&gt;boardgame&lt;/td&gt;
+&lt;td&gt;Terra Mystica&lt;/td&gt;
+&lt;td&gt;2012.0&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;5.0&lt;/td&gt;
+&lt;td&gt;150.0&lt;/td&gt;
+&lt;td&gt;60.0&lt;/td&gt;
+&lt;td&gt;150.0&lt;/td&gt;
+&lt;td&gt;12.0&lt;/td&gt;
+&lt;td&gt;14383&lt;/td&gt;
+&lt;td&gt;8.28798&lt;/td&gt;
+&lt;td&gt;8.14232&lt;/td&gt;
+&lt;td&gt;16519&lt;/td&gt;
+&lt;td&gt;132&lt;/td&gt;
+&lt;td&gt;1586&lt;/td&gt;
+&lt;td&gt;6277&lt;/td&gt;
+&lt;td&gt;2526&lt;/td&gt;
+&lt;td&gt;1423&lt;/td&gt;
+&lt;td&gt;3.8939&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;td&gt;102794&lt;/td&gt;
+&lt;td&gt;boardgame&lt;/td&gt;
+&lt;td&gt;Caverna: The Cave Farmers&lt;/td&gt;
+&lt;td&gt;2013.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;7.0&lt;/td&gt;
+&lt;td&gt;210.0&lt;/td&gt;
+&lt;td&gt;30.0&lt;/td&gt;
+&lt;td&gt;210.0&lt;/td&gt;
+&lt;td&gt;12.0&lt;/td&gt;
+&lt;td&gt;9262&lt;/td&gt;
+&lt;td&gt;8.28994&lt;/td&gt;
+&lt;td&gt;8.06886&lt;/td&gt;
+&lt;td&gt;12230&lt;/td&gt;
+&lt;td&gt;99&lt;/td&gt;
+&lt;td&gt;1476&lt;/td&gt;
+&lt;td&gt;5600&lt;/td&gt;
+&lt;td&gt;1700&lt;/td&gt;
+&lt;td&gt;777&lt;/td&gt;
+&lt;td&gt;3.7761&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;td&gt;25613&lt;/td&gt;
+&lt;td&gt;boardgame&lt;/td&gt;
+&lt;td&gt;Through the Ages: A Story of Civilization&lt;/td&gt;
+&lt;td&gt;2006.0&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;4.0&lt;/td&gt;
+&lt;td&gt;240.0&lt;/td&gt;
+&lt;td&gt;240.0&lt;/td&gt;
+&lt;td&gt;240.0&lt;/td&gt;
+&lt;td&gt;12.0&lt;/td&gt;
+&lt;td&gt;13294&lt;/td&gt;
+&lt;td&gt;8.20407&lt;/td&gt;
+&lt;td&gt;8.05804&lt;/td&gt;
+&lt;td&gt;14343&lt;/td&gt;
+&lt;td&gt;362&lt;/td&gt;
+&lt;td&gt;1084&lt;/td&gt;
+&lt;td&gt;5075&lt;/td&gt;
+&lt;td&gt;3378&lt;/td&gt;
+&lt;td&gt;1642&lt;/td&gt;
+&lt;td&gt;4.1590&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;4&lt;/th&gt;
+&lt;td&gt;3076&lt;/td&gt;
+&lt;td&gt;boardgame&lt;/td&gt;
+&lt;td&gt;Puerto Rico&lt;/td&gt;
+&lt;td&gt;2002.0&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;5.0&lt;/td&gt;
+&lt;td&gt;150.0&lt;/td&gt;
+&lt;td&gt;90.0&lt;/td&gt;
+&lt;td&gt;150.0&lt;/td&gt;
+&lt;td&gt;12.0&lt;/td&gt;
+&lt;td&gt;39883&lt;/td&gt;
+&lt;td&gt;8.14261&lt;/td&gt;
+&lt;td&gt;8.04524&lt;/td&gt;
+&lt;td&gt;44362&lt;/td&gt;
+&lt;td&gt;795&lt;/td&gt;
+&lt;td&gt;861&lt;/td&gt;
+&lt;td&gt;5414&lt;/td&gt;
+&lt;td&gt;9173&lt;/td&gt;
+&lt;td&gt;5213&lt;/td&gt;
+&lt;td&gt;3.2943&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Since we are trying to predict the &lt;b&gt; average_rating &lt;/b&gt; column using other columns let's visualize and explore it a little.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [75]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sns&lt;/span&gt;
+&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
 
-<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">color_codes</span><span class="o">=</span><span class="s2">"True"</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">board_games</span><span class="p">[</span><span class="s2">"average_rating"</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[75]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre><matplotlib.axes._subplots.axessubplot at 0x13b5a0f28></pre>
-</div>
-</div>
-<div class="output_area"><div class="prompt"></div>
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAe0AAAFkCAYAAAANC2PrAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;color_codes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"True"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;distplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;board_games&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"average_rating"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[75]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;&lt;matplotlib.axes._subplots.axessubplot at 0x13b5a0f28&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAe0AAAFkCAYAAAANC2PrAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XlwVPedLvzn9N6t09pbEmhfEDsCYbDHNoltophxvMSL
 JtixPb5hPFOZqXnv3Djz+nreig3ve0GpTJKZyeuXuUnGqQnOdXSTeIlD4g0b24HYGDASCCEJtO9q
 7X16X877h5BASK1utdTq7flUqQr69Dn97aNWP2f5LYIsyzKIiIgo6ikiXQAREREFh6FNREQUIxja
@@ -1847,93 +1735,93 @@ nn/+eTw8PAgKCqKxsRGLxcKbb75JSkoKX3zxBaNHj7aP2JcsWUJqaiqRkZHYbDZWrlzJww8/fNvv
 jb+/P7/99htr1qxh7969Wseyc/R8QjgaGWkL0YP5+vqSlJSEXq/HYDCwYcOGDs89efIkGzZsaDMq
 Vkqh0+nIzMxk8ODBmuYTQshIWwghhHAaMhFNCCGEcBJStIUQQggnIUVbCCGEcBJStIUQQggnIUVb
 CCGEcBL/B+qwE1RxG97ZAAAAAElFTkSuQmCC
-">
-</img></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As we can see in the histogram above that most average_ratings lie around ~6. Let's confirm our inference and calculate the standard deviation and mean for the <b> average_rating </b> column.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [76]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sd</span> <span class="o">=</span> <span class="n">board_games</span><span class="p">[</span><span class="s2">"average_rating"</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-<span class="n">mean</span> <span class="o">=</span> <span class="n">board_games</span><span class="p">[</span><span class="s2">"average_rating"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+"&gt;
+&lt;/img&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;As we can see in the histogram above that most average_ratings lie around ~6. Let's confirm our inference and calculate the standard deviation and mean for the &lt;b&gt; average_rating &lt;/b&gt; column.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [76]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;board_games&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"average_rating"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;mean&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;board_games&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"average_rating"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 
-<span class="nb">print</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span><span class="n">mean</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>1.5788299348332662 6.016112849333889
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2> Clustering and Error Metrics </h2><p>To look for patterns in the data we are going to use a clustering algorithm to create clusters in the data and plot them out. A good first choice would be the <b> Kmeans</b> class from the scikit-learn library in Python. The KMeans class only works with numeric columns, so numeric columns of our dataset will be extracted out.</p>
-<p>As the data is continuous it might be a good idea to use mean squared error as an error metric. The mean square error will penalize larger errors in our model more.</p>
-<p>For the cluster assingment we find the mean and standard deviation of each row, then make a scatterplot for mean vs standard deviation and shade the points according to their cluster assignment.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [77]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="k">import</span> <span class="n">KMeans</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pandas</span> <span class="k">import</span> <span class="n">DataFrame</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sd&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;1.5788299348332662 6.016112849333889
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2&gt; Clustering and Error Metrics &lt;/h2&gt;&lt;p&gt;To look for patterns in the data we are going to use a clustering algorithm to create clusters in the data and plot them out. A good first choice would be the &lt;b&gt; Kmeans&lt;/b&gt; class from the scikit-learn library in Python. The KMeans class only works with numeric columns, so numeric columns of our dataset will be extracted out.&lt;/p&gt;
+&lt;p&gt;As the data is continuous it might be a good idea to use mean squared error as an error metric. The mean square error will penalize larger errors in our model more.&lt;/p&gt;
+&lt;p&gt;For the cluster assingment we find the mean and standard deviation of each row, then make a scatterplot for mean vs standard deviation and shade the points according to their cluster assignment.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [77]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.cluster&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;KMeans&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;DataFrame&lt;/span&gt;
+&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
 
-<span class="n">kmodel</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">board_games_numeric</span> <span class="o">=</span> <span class="n">board_games</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'name'</span><span class="p">,</span><span class="s1">'type'</span><span class="p">,</span><span class="s1">'id'</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">kmodel</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">board_games_numeric</span><span class="p">)</span>
+&lt;span class="n"&gt;kmodel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;KMeans&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n_clusters&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;random_state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;board_games_numeric&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;board_games&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;drop&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;'name'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'type'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'id'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;&lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;kmodel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;board_games_numeric&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-<span class="n">games_mean</span> <span class="o">=</span> <span class="n">board_games_numeric</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">games_std</span> <span class="o">=</span> <span class="n">board_games_numeric</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+&lt;span class="n"&gt;games_mean&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;board_games_numeric&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apply&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;games_std&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;board_games_numeric&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apply&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-<span class="n">labels</span> <span class="o">=</span> <span class="n">kmodel</span><span class="o">.</span><span class="n">labels_</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">()</span>
-<span class="n">df</span><span class="p">[</span><span class="s2">"mean"</span><span class="p">]</span> <span class="o">=</span> <span class="n">games_mean</span>
-<span class="n">df</span><span class="p">[</span><span class="s2">"standard_deviation"</span><span class="p">]</span> <span class="o">=</span> <span class="n">games_std</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">"ticks"</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">"mean"</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">"standard_deviation"</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"g"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[77]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre><seaborn.axisgrid.jointgrid at 0x13b5a0cf8></pre>
-</div>
-</div>
-<div class="output_area"><div class="prompt"></div>
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbgAAAGpCAYAAAD/QCONAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+&lt;span class="n"&gt;labels&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;kmodel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;labels_&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"mean"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;games_mean&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"standard_deviation"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;games_std&lt;/span&gt;
+&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_style&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"ticks"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;jointplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"mean"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"standard_deviation"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;labels&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"g"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[77]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;&lt;seaborn.axisgrid.jointgrid at 0x13b5a0cf8&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbgAAAGpCAYAAAD/QCONAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xd4VHWi//H3mcxMkilplFACBCFUCSJgAxEFFTsWFFBc
 y10XFSysXCzwE+viqvdZFdnrXa+6ohfLLlhWV1xwF0R66CWAEIGEkkLKzKRMO78/so6yujAiwyTD
 5/U8PA/nzBnm81UyH077HsM0TRMREZEEY4l3ABERkVhQwYmISEJSwYmISEJSwYmISEJSwYmISEKy
@@ -2275,42 +2163,42 @@ ISwsDHv37nU8ztvbGwCg0+nAy8MSdQ+eoiTqRuHh4aisrERtbS0AIDc3F5s3b0ZtbS30ej3i4+Mx
 fvx4lJaW/uGitSw4ou7BIziiB6DT6brcfvjhh5GZmYnk5GTY7XYEBgZiy5Yt8PHxwciRIzFlyhT0
 7t0b48aNw7Vr1+76HL+/TUT3h8vlEBGRkniKkoiIlMSCIyIiJbHgiIhISSw4IiJSEguOiIiUxIIj
 IiIlseCIiEhJ/wMBk1CnDyU4IgAAAABJRU5ErkJggg==
-">
-</img></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Looking at the clusters above in different shades of green it can be observed that most of the games are similar in their distribution across parameters. But as the attributes tend to increase (increase in mean), say because of the number of users who rated the game are high (<b>users_rated</b> column), we have fewer and fewer games.</p>
-<p>The <b> users_rated </b> column specifies the number of users who rated the game, hence a possible take away from a higher attribute value is that a few games get rated by a lot of users, but most games don't get played much.</p>
-<p>Next, let's figure out which columns correlate well with <b> average_rating </b>. This would allow us to remove columns that do not add much predictive power to our model.</p>
-<p>We will be using a regression model to predict average ratings and columns that are uncorrelated with the target don't help a linear regression model. It also enables us to remove columns that are derived from the target, or could otherwise cause overfitting.</p>
-<h2> Correlations </h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [78]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">correlations</span> <span class="o">=</span> <span class="n">board_games_numeric</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+"&gt;
+&lt;/img&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Looking at the clusters above in different shades of green it can be observed that most of the games are similar in their distribution across parameters. But as the attributes tend to increase (increase in mean), say because of the number of users who rated the game are high (&lt;b&gt;users_rated&lt;/b&gt; column), we have fewer and fewer games.&lt;/p&gt;
+&lt;p&gt;The &lt;b&gt; users_rated &lt;/b&gt; column specifies the number of users who rated the game, hence a possible take away from a higher attribute value is that a few games get rated by a lot of users, but most games don't get played much.&lt;/p&gt;
+&lt;p&gt;Next, let's figure out which columns correlate well with &lt;b&gt; average_rating &lt;/b&gt;. This would allow us to remove columns that do not add much predictive power to our model.&lt;/p&gt;
+&lt;p&gt;We will be using a regression model to predict average ratings and columns that are uncorrelated with the target don't help a linear regression model. It also enables us to remove columns that are derived from the target, or could otherwise cause overfitting.&lt;/p&gt;
+&lt;h2&gt; Correlations &lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [78]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;correlations&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;board_games_numeric&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;corr&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 
-<span class="n">correlations</span><span class="p">[</span><span class="s2">"average_rating"</span><span class="p">]</span> <span class="c1">#Shows us how each column in board game dataset is correlated with average_rating</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[78]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>yearpublished           0.108461
+&lt;span class="n"&gt;correlations&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"average_rating"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c1"&gt;#Shows us how each column in board game dataset is correlated with average_rating&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[78]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;yearpublished           0.108461
 minplayers             -0.032701
 maxplayers             -0.008335
 playingtime             0.048994
@@ -2327,95 +2215,95 @@ total_wishers           0.171375
 total_comments          0.123714
 total_weights           0.109691
 average_weight          0.351081
-Name: average_rating, dtype: float64</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Correlations tell you what columns are closely related to the column you are interested in. The closer to 0 the correlation, the weaker the connetion. The closer to 1, the stronger the positive correlation, and the closer to -1, the stronger the negative correlation.</p>
-<p>As we see above a couple of columns show higher values of correlating with our average_rating column. The <i>average_weight</i> column seems to be correlated with our average_rating column implying the more  "weight" a game has the more highly it tends to be rated. Weight is a subjective measure that is made up by BoardGameGeek. It describes how "deep" or involved a game is.</p>
-<p>We can also note that games for older players, where <i> minage </i> is high, tend to have higher average rating. The <i>yearpublished</i> correlation values tell us that newer games tend to have a higher rating.</p>
-<p>The <i> bayes_average_rating </i> column seems to be calculated from the average_rating column in our dataset, and therefore will be removed as it will cause our model to overfit.</p>
-<p><h2> Modelling and Validation </h2>
-We are going to create a linear regression model to make predictions for newly created board games. Let's see the performance of the model on just the training set. As discussed before, we'll drop the highly correlated columns from the dataset and use all numerical colums as input predictors to our model. The <i> average_rating </i> column will be our target output.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [134]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">KFold</span>
-<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">cross_val_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LinearRegression</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">mean_squared_error</span> 
+Name: average_rating, dtype: float64&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Correlations tell you what columns are closely related to the column you are interested in. The closer to 0 the correlation, the weaker the connetion. The closer to 1, the stronger the positive correlation, and the closer to -1, the stronger the negative correlation.&lt;/p&gt;
+&lt;p&gt;As we see above a couple of columns show higher values of correlating with our average_rating column. The &lt;i&gt;average_weight&lt;/i&gt; column seems to be correlated with our average_rating column implying the more  "weight" a game has the more highly it tends to be rated. Weight is a subjective measure that is made up by BoardGameGeek. It describes how "deep" or involved a game is.&lt;/p&gt;
+&lt;p&gt;We can also note that games for older players, where &lt;i&gt; minage &lt;/i&gt; is high, tend to have higher average rating. The &lt;i&gt;yearpublished&lt;/i&gt; correlation values tell us that newer games tend to have a higher rating.&lt;/p&gt;
+&lt;p&gt;The &lt;i&gt; bayes_average_rating &lt;/i&gt; column seems to be calculated from the average_rating column in our dataset, and therefore will be removed as it will cause our model to overfit.&lt;/p&gt;
+&lt;p&gt;&lt;h2&gt; Modelling and Validation &lt;/h2&gt;
+We are going to create a linear regression model to make predictions for newly created board games. Let's see the performance of the model on just the training set. As discussed before, we'll drop the highly correlated columns from the dataset and use all numerical colums as input predictors to our model. The &lt;i&gt; average_rating &lt;/i&gt; column will be our target output.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [134]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.cross_validation&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;KFold&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.cross_validation&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;cross_val_score&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.linear_model&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;LinearRegression&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.metrics&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;mean_squared_error&lt;/span&gt; 
 
-<span class="n">board_games_numeric2</span> <span class="o">=</span> <span class="n">board_games_numeric</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'average_rating'</span><span class="p">,</span><span class="s1">'bayes_average_rating'</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-
-<span class="n">lr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
-<span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">board_games_numeric2</span><span class="p">,</span> <span class="n">board_games</span><span class="p">[</span><span class="s2">"average_rating"</span><span class="p">])</span>
-<span class="n">predictions</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">board_games_numeric2</span><span class="p">)</span>
+&lt;span class="n"&gt;board_games_numeric2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;board_games_numeric&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;drop&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;'average_rating'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'bayes_average_rating'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;&lt;span class="n"&gt;axis&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 
-<span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">board_games</span><span class="p">[</span><span class="s2">"average_rating"</span><span class="p">],</span><span class="n">predictions</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mse</span><span class="p">)</span>
-<span class="n">rmse</span> <span class="o">=</span> <span class="n">mse</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>2.09339697583
+&lt;span class="n"&gt;lr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LinearRegression&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;lr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;board_games_numeric2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;board_games&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"average_rating"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;predictions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;lr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;board_games_numeric2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="n"&gt;mse&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mean_squared_error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;board_games&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"average_rating"&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;&lt;span class="n"&gt;predictions&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mse&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;rmse&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mse&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rmse&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;2.09339697583
 1.44685762113
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We obtained a mean square error of 2.09. Let's see how our predictions plot over the actual average_ratings.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [94]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">board_games</span><span class="p">[</span><span class="s2">"average_rating"</span><span class="p">])</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[94]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre><matplotlib.axes._subplots.axessubplot at 0x137e8e438></pre>
-</div>
-</div>
-<div class="output_area"><div class="prompt"></div>
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX0AAAEXCAYAAABBFpRtAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;We obtained a mean square error of 2.09. Let's see how our predictions plot over the actual average_ratings.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [94]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;distplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;board_games&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"average_rating"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;distplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;predictions&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[94]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;&lt;matplotlib.axes._subplots.axessubplot at 0x137e8e438&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX0AAAEXCAYAAABBFpRtAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xl8XXWd+P/XufuavXvSNF3SlgKhRUDAAhpbqiCIUAyW
 lhmZ5as242h19DvzBVr9YdTvjM7Y2hkYHR22iV8VEIuyNC0FylbSpjRd0j1N2qTNfvf1nN8ft0ma
 ZrnZb3Lv+/l45GFzzrn3vo/kvu/nvs/nvD+KpmkaQgghUoIu0QEIIYQYP5L0hRAihUjSF0KIFCJJ
@@ -2739,66 +2627,66 @@ GhoauH//Pi6XC9M0uXPnDnl5edteQ319Pbdv32bfvn3k5uZy4sQJotEohYWFLC8v4/V6cbvd1vjN
 jmzeLJ9SO6Vv76i0FggEKCsr4+jRo3z69ImOjg4GBwf/dixLqudT/x7d6au0dvjwYVpaWti1axd7
 9uyhs7Nz07FTU1N0dnZu2JWLCDabjUePHnHgwIG/mk+p7dCdvlJKpRH9I1cppdKIFn2llEojWvSV
 UiqNaNFXSqk0okVfKaXSiBZ9pZRKI/8B4saf7TNbeu8AAAAASUVORK5CYII=
-">
-</img></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2> K-Folds Cross Validation </h2><p>We now split our data into training and test sets, train our algorithm on the training sets and test its performance on our test sets. For validation purposes we will use K-folds cross validation to see if our predictive model can be improved.</p>
-<p>In k-fold cross-validation, the original sample is randomly partitioned into k equal sized subsamples. Of the k subsamples, a single subsample is retained as the validation data for testing the model, and the remaining k − 1 subsamples are used as training data. The cross-validation process is then repeated k times (the folds), with each of the k subsamples used exactly once as the validation data. The k results from the folds can then be averaged to produce a single estimation. The advantage of this method over repeated random sub-sampling (see below) is that all observations are used for both training and validation, and each observation is used for validation exactly once. 10-fold cross-validation is commonly used, but in general k remains an unfixed parameter.  <a href="https://en.wikipedia.org/wiki/Cross-validation_(statistics">(Source)</a></p>
-<p>In this case we use K=10 folds. To see how the good the model actually is we can compare our mean squared error to the standard deviation.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [135]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">KFold</span>
-<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">cross_val_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">cross_val_predict</span>
+"&gt;
+&lt;/img&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2&gt; K-Folds Cross Validation &lt;/h2&gt;&lt;p&gt;We now split our data into training and test sets, train our algorithm on the training sets and test its performance on our test sets. For validation purposes we will use K-folds cross validation to see if our predictive model can be improved.&lt;/p&gt;
+&lt;p&gt;In k-fold cross-validation, the original sample is randomly partitioned into k equal sized subsamples. Of the k subsamples, a single subsample is retained as the validation data for testing the model, and the remaining k − 1 subsamples are used as training data. The cross-validation process is then repeated k times (the folds), with each of the k subsamples used exactly once as the validation data. The k results from the folds can then be averaged to produce a single estimation. The advantage of this method over repeated random sub-sampling (see below) is that all observations are used for both training and validation, and each observation is used for validation exactly once. 10-fold cross-validation is commonly used, but in general k remains an unfixed parameter.  &lt;a href="https://en.wikipedia.org/wiki/Cross-validation_(statistics"&gt;(Source)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this case we use K=10 folds. To see how the good the model actually is we can compare our mean squared error to the standard deviation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [135]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.cross_validation&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;KFold&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.cross_validation&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;cross_val_score&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.cross_validation&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;cross_val_predict&lt;/span&gt;
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">board_games_numeric2</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">board_games</span><span class="p">[</span><span class="s2">"average_rating"</span><span class="p">]</span>
+&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;board_games_numeric2&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;board_games&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"average_rating"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 
-<span class="n">kf</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">board_games_numeric2</span><span class="p">),</span><span class="mi">10</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
-<span class="n">mse</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">lr</span><span class="p">,</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span> <span class="s1">'mean_squared_error'</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">kf</span><span class="p">)</span>
-<span class="n">averagemse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">mse</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">averagemse</span><span class="p">))</span>
-<span class="n">rmse</span> <span class="o">=</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">averagemse</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+&lt;span class="n"&gt;kf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;KFold&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;board_games_numeric2&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shuffle&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;random_state&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;mse&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cross_val_score&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lr&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;scoring&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'mean_squared_error'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;kf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;averagemse&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mse&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;abs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;averagemse&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;rmse&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;abs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;averagemse&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rmse&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-<span class="n">predicted</span> <span class="o">=</span> <span class="n">cross_val_predict</span><span class="p">(</span><span class="n">lr</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="n">kf</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">board_games</span><span class="p">[</span><span class="s2">"average_rating"</span><span class="p">])</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">predicted</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>2.09490764514
+&lt;span class="n"&gt;predicted&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cross_val_predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lr&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;kf&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;distplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;board_games&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"average_rating"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;distplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;predicted&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;2.09490764514
 1.4473795788
-</pre>
-</div>
-</div>
-<div class="output_area"><div class="prompt output_prompt">Out[135]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre><matplotlib.axes._subplots.axessubplot at 0x12d9c53c8></pre>
-</div>
-</div>
-<div class="output_area"><div class="prompt"></div>
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX0AAAEXCAYAAABBFpRtAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[135]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;&lt;matplotlib.axes._subplots.axessubplot at 0x12d9c53c8&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX0AAAEXCAYAAABBFpRtAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xt4lPWd///nPeeZzORMOAVCEAKigoLnNh6KKG1dW6vY
 WAT32rbf39UuqVtpt3toFexX0+3ut+21UHa1det6WrYHbZXWE0cVEDAYNGA4QxLI+TTn433//hgy
 JCQwOUxmJsn7cV1ckJl77nkDySufvO/P/fkomqZpCCGEGBd0qS5ACCFE8kjoCyHEOCKhL4QQ44iE
@@ -3117,37 +3005,37 @@ IJlMMj09jdfrZXNzk/r6evPEMDIywvz8PKqqkk6nmZqaoqqq6ttrGB4eZnJyktLSUhwOBw0NDYTD
 YZxOJ/F4HK/Xi8fjMcd/VCr3o/iE+Cm5vSNy2traGi0tLdTW1nJzc8Ps7OxfNZn+t2V7fOL/R3b6
 IqdVV1czNjZGXl4ehYWF+Hy+D8deXFzg8/ne7cpfX1+xWCwsLy9TXl7+n8YnxHfITl8IIXKI/MgV
 QogcIklfCCFyiCR9IYTIIZL0hRAih0jSF0KIHCJJXwghcsg/YWLNPOSi1PQAAAAASUVORK5CYII=
-">
-</img></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As we can see K-folds cross validation did not significantly improve our model accuracy, with our MSE still at 2.09. Our model may not have high predictive powers as our mean square error is close to the standard deviation of game ratings. We would need to dig deeper into our dataset to obtain a better understanding. Some of the potential next steps could be :</p>
-<p><ui></ui></p>
-<li> Calculate new predictors based off other existings columns such as player ranges (maxplayers-minplayers) </li>
-<li> Scraping more data from BoardGameGeek to increase the size of the dataset. </li>
-<li> Try algorithms other than linear regression </li>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+"&gt;
+&lt;/img&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;As we can see K-folds cross validation did not significantly improve our model accuracy, with our MSE still at 2.09. Our model may not have high predictive powers as our mean square error is close to the standard deviation of game ratings. We would need to dig deeper into our dataset to obtain a better understanding. Some of the potential next steps could be :&lt;/p&gt;
+&lt;p&gt;&lt;ui&gt;&lt;/ui&gt;&lt;/p&gt;
+&lt;li&gt; Calculate new predictors based off other existings columns such as player ranges (maxplayers-minplayers) &lt;/li&gt;
+&lt;li&gt; Scraping more data from BoardGameGeek to increase the size of the dataset. &lt;/li&gt;
+&lt;li&gt; Try algorithms other than linear regression &lt;/li&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
@@ -3173,55 +3061,5 @@ QogcIklfCCFyiCR9IYTIIZL0hRAih0jSF0KIHCJJXwghcsg/YWLNPOSi1PQAAAAASUVORK5CYII=
         "}); ";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-</script>
-
-            </div>
-            <!-- /.entry-content -->
-        </article>
-    </section>
-
-        </div>
-        <div class="col-sm-3" id="sidebar">
-            <aside>
-
-<section class="well well-sm">
-    <ul class="list-group list-group-flush">
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="https://www.linkedin.com/in/guneet-singh-kohli-9a8aa934"><i class="fa fa-linkedin-square fa-lg"></i> Linkedin</a></li>
-              </ul>
-            </li>
-
-
-
-
-
-    </ul>
-</section>
-            </aside>
-        </div>
-    </div>
-</div>
-<footer>
-   <div class="container">
-      <hr>
-      <div class="row">
-         <div class="col-xs-10">&copy; 2016 Guneet Singh Kohli
-            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
-            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
-         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
-      </div>
-   </div>
-</footer>
-<script src="http://GuneetKohli.github.io/theme/js/jquery.min.js"></script>
-
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://GuneetKohli.github.io/theme/js/bootstrap.min.js"></script>
-
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://GuneetKohli.github.io/theme/js/respond.min.js"></script>
-
-
-</body>
-</html>
+&lt;/script&gt;
+</summary><category term="KMeans Clustering"></category><category term="Linear Regression"></category></entry></feed>

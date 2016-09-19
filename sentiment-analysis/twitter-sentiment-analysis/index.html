@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link href="http://GuneetKohli.github.io/images/favicon.png" rel="icon">
+    <link href="http://localhost:8000/images/favicon.png" rel="icon">
 
-<link rel="canonical" href="http://GuneetKohli.github.io/sentiment-analysis/twitter-sentiment-analysis/">
+<link rel="canonical" href="http://localhost:8000/sentiment-analysis/twitter-sentiment-analysis/">
 
         <meta name="author" content="Guneet Singh Kohli" />
         <meta name="keywords" content="Sentiment Analysis" />
@@ -19,7 +19,7 @@
         <meta property="og:site_name" content="Far Beyond Data" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Who are we really talking about? Trump Vs Clinton, a Twitter Sentiment Analysis"/>
-        <meta property="og:url" content="http://GuneetKohli.github.io/sentiment-analysis/twitter-sentiment-analysis/"/>
+        <meta property="og:url" content="http://localhost:8000/sentiment-analysis/twitter-sentiment-analysis/"/>
         <meta property="og:description" content="The race to the 2016 presidential election is going strong, there is a lot of talk and the general public opinion is up for grabs. The data for the endeavor below is being pulled from the Twitter Streaming API and I have scheduled new data to be pulled every 6 hours as we reach closer to the election day. The code runs periodically on a DigitalOcean cloud server running Ubuntu 16.04.1x64 and Python 3.5. The dataset at the time this article was published comprised of 16,232 tweets about Hillary Clinton and Donald Trump. Even though the code walkthrough and the tables are snapshot in time, the visualisations will keep updating automatically as we keep getting new tweets. Watch this space!"/>
         <meta property="article:published_time" content="2016-06-08" />
             <meta property="article:section" content="Sentiment Analysis" />
@@ -28,13 +28,13 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://GuneetKohli.github.io/theme/css/bootstrap.cosmo.min.css" type="text/css"/>
-    <link href="http://GuneetKohli.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://localhost:8000/theme/css/bootstrap.cosmo.min.css" type="text/css"/>
+    <link href="http://localhost:8000/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="http://GuneetKohli.github.io/theme/css/pygments/friendly.css" rel="stylesheet">
-    <link href="http://GuneetKohli.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://GuneetKohli.github.io/theme/css/style.css" type="text/css"/>
-        <link href="http://GuneetKohli.github.io/static/custom.css" rel="stylesheet">
+    <link href="http://localhost:8000/theme/css/pygments/friendly.css" rel="stylesheet">
+    <link href="http://localhost:8000/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://localhost:8000/theme/css/style.css" type="text/css"/>
+        <link href="http://localhost:8000/static/custom.css" rel="stylesheet">
 
 
 
@@ -52,22 +52,22 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="http://GuneetKohli.github.io/" class="navbar-brand">
-<img class="img-responsive pull-left gap-right" src="http://GuneetKohli.github.io/images/logo.png" width="28"/> Far Beyond Data            </a>
+            <a href="http://localhost:8000/" class="navbar-brand">
+<img class="img-responsive pull-left gap-right" src="http://localhost:8000/images/logo.png" width="28"/> Far Beyond Data            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="http://GuneetKohli.github.io/about-me.html">
+                         <li><a href="http://localhost:8000/about-me.html">
                               About Me 
                           </a></li>
                         <li >
-                            <a href="http://GuneetKohli.github.io/category/data-wrangling.html">Data wrangling</a>
+                            <a href="http://localhost:8000/category/data-wrangling.html">Data wrangling</a>
                         </li>
                         <li >
-                            <a href="http://GuneetKohli.github.io/category/machine-learning.html">Machine learning</a>
+                            <a href="http://localhost:8000/category/machine-learning.html">Machine learning</a>
                         </li>
                         <li class="active">
-                            <a href="http://GuneetKohli.github.io/category/sentiment-analysis.html">Sentiment analysis</a>
+                            <a href="http://localhost:8000/category/sentiment-analysis.html">Sentiment analysis</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -90,7 +90,7 @@
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://GuneetKohli.github.io/sentiment-analysis/twitter-sentiment-analysis/"
+                    <a href="http://localhost:8000/sentiment-analysis/twitter-sentiment-analysis/"
                        rel="bookmark"
                        title="Permalink to Who are we really talking about? Trump Vs Clinton, a Twitter Sentiment Analysis">
                         Who are we really talking about? Trump Vs Clinton, a Twitter Sentiment Analysis
@@ -109,11 +109,11 @@
 
 
         <span class="label label-default">Category</span>
-        <a href="http://GuneetKohli.github.io/category/sentiment-analysis.html">Sentiment Analysis</a>
+        <a href="http://localhost:8000/category/sentiment-analysis.html">Sentiment Analysis</a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="http://GuneetKohli.github.io/tags/sentiment-analysis.html">Sentiment Analysis</a>
+	<a href="http://localhost:8000/tags/sentiment-analysis.html">Sentiment Analysis</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -1851,7 +1851,7 @@ h6:hover .anchor-link {
             var disqus_shortname = 'farbeyonddata'; // required: replace example with your forum shortname
 
                     var disqus_identifier = 'twitter-sentiment-analysis';
-                var disqus_url = 'http://GuneetKohli.github.io/sentiment-analysis/twitter-sentiment-analysis/';
+                var disqus_url = 'http://localhost:8000/sentiment-analysis/twitter-sentiment-analysis/';
 
             var disqus_config = function () {
                 this.language = "en";
@@ -1898,22 +1898,22 @@ h6:hover .anchor-link {
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="http://GuneetKohli.github.io/machine-learning/board-game-reviews/">
+                        <a href="http://localhost:8000/machine-learning/board-game-reviews/">
                             Predicting Board Game Reviews using KMeans Clustering & Linear Regression
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://GuneetKohli.github.io/data-wrangling/pk/">
+                        <a href="http://localhost:8000/data-wrangling/pk/">
                             Police killings in USA, where the police have killed in 2015
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://GuneetKohli.github.io/machine-learning/predicting-bike-rentals/">
+                        <a href="http://localhost:8000/machine-learning/predicting-bike-rentals/">
                             Predicting Bike Rentals by Applying Decision Trees & Random Forests
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="http://GuneetKohli.github.io/sentiment-analysis/twitter-sentiment-analysis/">
+                        <a href="http://localhost:8000/sentiment-analysis/twitter-sentiment-analysis/">
                             Who are we really talking about? Trump Vs Clinton, a Twitter Sentiment Analysis
                         </a>
                     </li>
@@ -1960,15 +1960,15 @@ h6:hover .anchor-link {
       </div>
    </div>
 </footer>
-<script src="http://GuneetKohli.github.io/theme/js/jquery.min.js"></script>
+<script src="http://localhost:8000/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://GuneetKohli.github.io/theme/js/bootstrap.min.js"></script>
+<script src="http://localhost:8000/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://GuneetKohli.github.io/theme/js/respond.min.js"></script>
+<script src="http://localhost:8000/theme/js/respond.min.js"></script>
 
-    <script src="http://GuneetKohli.github.io/theme/js/bodypadding.js"></script>
+    <script src="http://localhost:8000/theme/js/bodypadding.js"></script>
     <!-- Disqus -->
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

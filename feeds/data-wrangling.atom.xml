@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Guneet's Blog</title><link href="http://GuneetKohli.github.io/" rel="alternate"></link><link href="http://GuneetKohli.github.io/feeds/data-wrangling.atom.xml" rel="self"></link><id>http://GuneetKohli.github.io/</id><updated>2016-06-08T20:00:00-07:00</updated><entry><title>Police killings in USA, where the police have killed in 2015</title><link href="http://GuneetKohli.github.io/pk.html" rel="alternate"></link><published>2016-06-08T20:00:00-07:00</published><author><name>Guneet Singh Kohli</name></author><id>tag:GuneetKohli.github.io,2016-06-08:pk.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Far Beyond Data</title><link href="https://GuneetKohli.github.io/" rel="alternate"></link><link href="https://GuneetKohli.github.io/feeds/data-wrangling.atom.xml" rel="self"></link><id>https://GuneetKohli.github.io/</id><updated>2016-06-08T20:00:00-07:00</updated><entry><title>Police killings in USA, where the police have killed in 2015</title><link href="https://GuneetKohli.github.io/data-wrangling/pk/" rel="alternate"></link><published>2016-06-08T20:00:00-07:00</published><author><name>Guneet Singh Kohli</name></author><id>tag:GuneetKohli.github.io,2016-06-08:data-wrangling/pk/</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -3238,24 +3238,13 @@ If we look at the data above we see that states with lower shooting rates tend t
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h1&gt; Next Steps &lt;/h1&gt;&lt;p&gt;For further analysis we could explore some of the columns that were not analysed for the above analysis and integrate more external data sources :&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Data.gov - http://www.data.gov/ &lt;/li&gt;
+&lt;li&gt;Data.gov -  http://www.data.gov/&lt;/li&gt;
 &lt;li&gt;Socrata - https://opendata.socrata.com/ &lt;/li&gt;
 &lt;li&gt;Github - https://github.com/caesar0301/awesome-public-datasets &lt;/li&gt;
 &lt;li&gt;Census Data - https://www.census.gov &lt;/li&gt;
 &lt;/ul&gt;&lt;p&gt;It'll be interesting to map out a state-level data in a choropleth map with matplotlib. A choropleth map is a kind of a thematic map that can be used to display data that varies across geographic regions. Data values are usually mapped to different color saturations for numerical variables or color hues for categorical variables. Different patterns can also be used, but that is not as common. Typical examples are maps that show election results.&lt;/p&gt;
 &lt;p&gt;It's useful to look more into the cause column as well, and see if there are any patterns. 
 Looking more broadly at crime rates where the shootings occured could be a good point of investigation as well.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3286,4 +3275,4 @@ Looking more broadly at crime rates where the shootings occured could be a good 
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="Data Wrangling"></category></entry></feed>
+</summary><category term="Data Wrangling"></category><category term="Pandas"></category></entry></feed>

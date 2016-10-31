@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Guneet's Blog</title><link href="http://GuneetKohli.github.io/" rel="alternate"></link><link href="http://GuneetKohli.github.io/feeds/machine-learning.atom.xml" rel="self"></link><id>http://GuneetKohli.github.io/</id><updated>2016-06-08T20:00:00-07:00</updated><entry><title>Predicting Board Game Reviews using KMeans Clustering &amp; Linear Regression</title><link href="http://GuneetKohli.github.io/board-game-reviews.html" rel="alternate"></link><published>2016-06-08T20:00:00-07:00</published><author><name>Guneet Singh Kohli</name></author><id>tag:GuneetKohli.github.io,2016-06-08:board-game-reviews.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Far Beyond Data</title><link href="https://GuneetKohli.github.io/" rel="alternate"></link><link href="https://GuneetKohli.github.io/feeds/machine-learning.atom.xml" rel="self"></link><id>https://GuneetKohli.github.io/</id><updated>2016-06-08T20:00:00-07:00</updated><entry><title>Predicting Board Game Reviews using KMeans Clustering &amp; Linear Regression</title><link href="https://GuneetKohli.github.io/machine-learning/board-game-reviews/" rel="alternate"></link><published>2016-06-08T20:00:00-07:00</published><author><name>Guneet Singh Kohli</name></author><id>tag:GuneetKohli.github.io,2016-06-08:machine-learning/board-game-reviews/</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -3016,22 +3016,11 @@ QogcIklfCCFyiCR9IYTIIZL0hRAih0jSF0KIHCJJXwghcsg/YWLNPOSi1PQAAAAASUVORK5CYII=
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;As we can see K-folds cross validation did not significantly improve our model accuracy, with our MSE still at 2.09. Our model may not have high predictive powers as our mean square error is close to the standard deviation of game ratings. We would need to dig deeper into our dataset to obtain a better understanding. Some of the potential next steps could be :&lt;/p&gt;
-&lt;p&gt;&lt;ui&gt;&lt;/ui&gt;&lt;/p&gt;
+&lt;p&gt;As we can see K-folds cross validation did not significantly improve our model accuracy, with our MSE still at 2.09. Our model may not have high predictive powers as our mean square error is close to the standard deviation of game ratings. We would need to dig deeper into our dataset to obtain a better understanding.&lt;/p&gt;
+&lt;h2&gt; Next Steps &lt;/h2&gt;&lt;p&gt;Some of the potential next steps could be : &lt;ui&gt;&lt;/ui&gt;&lt;/p&gt;
 &lt;li&gt; Calculate new predictors based off other existings columns such as player ranges (maxplayers-minplayers) &lt;/li&gt;
 &lt;li&gt; Scraping more data from BoardGameGeek to increase the size of the dataset. &lt;/li&gt;
 &lt;li&gt; Try algorithms other than linear regression &lt;/li&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3062,4 +3051,2076 @@ QogcIklfCCFyiCR9IYTIIZL0hRAih0jSF0KIHCJJXwghcsg/YWLNPOSi1PQAAAAASUVORK5CYII=
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="KMeans Clustering"></category><category term="Linear Regression"></category></entry></feed>
+</summary><category term="KMeans Clustering"></category><category term="Linear Regression"></category></entry><entry><title>Predicting Bike Rentals by Applying Decision Trees &amp; Random Forests</title><link href="https://GuneetKohli.github.io/machine-learning/predicting-bike-rentals/" rel="alternate"></link><published>2016-06-08T20:00:00-07:00</published><author><name>Guneet Singh Kohli</name></author><id>tag:GuneetKohli.github.io,2016-06-08:machine-learning/predicting-bike-rentals/</id><summary type="html">&lt;style type="text/css"&gt;/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI colors. */
+.ansibold {
+  font-weight: bold;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  border-left-width: 1px;
+  padding-left: 5px;
+  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #90CAF9;
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected {
+  border-color: #ababab;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  div.cell.selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected.jupyter-soft-selected {
+  border-left-width: 0;
+  padding-left: 6px;
+  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+  border-left-width: 0px;
+  padding-left: 6px;
+  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+@-moz-document url-prefix() {
+  div.inner_cell {
+    overflow-x: hidden;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area &gt; div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area &gt; div.highlight &gt; pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the &lt;head&gt; if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  padding: 0.4em;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
+  /* .CodeMirror-lines */
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev &lt;Maniac@SoftwareManiacs.Org&gt;
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+.rendered_html pre,
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+.rendered_html td,
+
+
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+&lt;/style&gt;
+&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
+&lt;style type="text/css"&gt;
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+&lt;/style&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;In many cities, there are communal bicycle sharing stations where you can rent bicycles by the hour or by the day. Kind of reminds me how we rent out cloud servers as I write this, haha. Washington, D.C. is one of these cities, and has detailed data available about how many bicycles were rented by hour and by day.&lt;/p&gt;
+&lt;p&gt;The powerful Hadi Fanaee-T at the University of Porto has compiled this data into a CSV file The file contains 17380 rows, and each row represents the bike rentals in a single hour of a single day. Let's take a closer look at it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [116]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+
+&lt;span class="n"&gt;bikerentals&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"/Users/Guneet/BikeRentals/bike_rental_hour.csv"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;bikerentals&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[116]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;table border="1" class="dataframe"&gt;
+&lt;thead&gt;
+&lt;tr style="text-align: right;"&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;instant&lt;/th&gt;
+&lt;th&gt;dteday&lt;/th&gt;
+&lt;th&gt;season&lt;/th&gt;
+&lt;th&gt;yr&lt;/th&gt;
+&lt;th&gt;mnth&lt;/th&gt;
+&lt;th&gt;hr&lt;/th&gt;
+&lt;th&gt;holiday&lt;/th&gt;
+&lt;th&gt;weekday&lt;/th&gt;
+&lt;th&gt;workingday&lt;/th&gt;
+&lt;th&gt;weathersit&lt;/th&gt;
+&lt;th&gt;temp&lt;/th&gt;
+&lt;th&gt;atemp&lt;/th&gt;
+&lt;th&gt;hum&lt;/th&gt;
+&lt;th&gt;windspeed&lt;/th&gt;
+&lt;th&gt;casual&lt;/th&gt;
+&lt;th&gt;registered&lt;/th&gt;
+&lt;th&gt;cnt&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;0&lt;/th&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2011-01-01&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.24&lt;/td&gt;
+&lt;td&gt;0.2879&lt;/td&gt;
+&lt;td&gt;0.81&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2011-01-01&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.22&lt;/td&gt;
+&lt;td&gt;0.2727&lt;/td&gt;
+&lt;td&gt;0.80&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;2011-01-01&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.22&lt;/td&gt;
+&lt;td&gt;0.2727&lt;/td&gt;
+&lt;td&gt;0.80&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;27&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;2011-01-01&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.24&lt;/td&gt;
+&lt;td&gt;0.2879&lt;/td&gt;
+&lt;td&gt;0.75&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;4&lt;/th&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;2011-01-01&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.24&lt;/td&gt;
+&lt;td&gt;0.2879&lt;/td&gt;
+&lt;td&gt;0.75&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Some columns which come across with particular interest in this dataset are :&lt;/p&gt;
+&lt;p&gt;&lt;ui&gt;&lt;/ui&gt;&lt;/p&gt;
+&lt;li&gt;&lt;b&gt;instant&lt;/b&gt; - a unique sequential id number for each row &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;dteday&lt;/b&gt;  - the date the rentals occurred on &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;season&lt;/b&gt;  - the season the rentals occurred in &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;yr&lt;/b&gt;  - the year the rentals occurred in &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;mnth&lt;/b&gt;  - the month the rentals occurred in &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;hr&lt;/b&gt;  - the hour the rentals occurred in &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;holiday&lt;/b&gt;  - whether or not the day was a holiday &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;weekday&lt;/b&gt;  - whether or not the day was a weekday &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;workingday&lt;/b&gt; -  whether or not the day was a working day &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;weathersit&lt;/b&gt;  - the weather situation (categorical variable) &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;temp&lt;/b&gt;  - the temperature on a 0-1 scale &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;atemp&lt;/b&gt;  - the adjusted temperature &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;hum&lt;/b&gt;  - the humidity on a 0-1 scale &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;windspeed&lt;/b&gt;  - the wind speed on a 0-1 scale &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;casual&lt;/b&gt;  - the number of casual riders (people who hadn't previously signed up with the bikesharing program) that rented bikes &lt;/li&gt;
+&lt;li&gt;&lt;b&gt;registered&lt;/b&gt;  - the number of registered riders (people who signed up previously) that rented bikes&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;cnt&lt;/b&gt; - the total number of bikes rented (casual + registered)&lt;/li&gt;&lt;p&gt;Let's take a closer look at the distribution of total rentals and make a normalized histogram of the cnt column.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [117]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sns&lt;/span&gt;
+&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
+
+&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;color_codes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"True"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;distplot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;bikerentals&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"cnt"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[117]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;&lt;matplotlib.axes._subplots.axessubplot at 0x11f4429e8&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_png output_subarea "&gt;
+&lt;img src="data:image/png;base64,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
+YII=
+"&gt;
+&lt;/img&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2&gt; Correlations &lt;/h2&gt;&lt;p&gt;Another interesting take away would be to see if any of the columns in the dataset is correlated with the cnt column.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [118]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;bikerentals&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;corr&lt;/span&gt;&lt;span class="p"&gt;()[&lt;/span&gt;&lt;span class="s2"&gt;"cnt"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[118]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;instant       0.278379
+season        0.178056
+yr            0.250495
+mnth          0.120638
+hr            0.394071
+holiday      -0.030927
+weekday       0.026900
+workingday    0.030284
+weathersit   -0.142426
+temp          0.404772
+atemp         0.400929
+hum          -0.322911
+windspeed     0.093234
+casual        0.694564
+registered    0.972151
+cnt           1.000000
+Name: cnt, dtype: float64&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Correlations tell you what columns are closely related to the column you are interested in. The closer to 0 the correlation, the weaker the connetion. The closer to 1, the stronger the positive correlation, and the closer to -1, the stronger the negative correlation.&lt;/p&gt;
+&lt;p&gt;The humidity column seems to have a reasonably strong negative correlation to the total number of bikes rented, which makes sense. The air temperature and hr columns maintain a similar yet opposite possitive correlation to the number of rentals.&lt;/p&gt;
+&lt;h2&gt; Calculating Features &lt;/h2&gt;&lt;p&gt;It is helpful to calculate features before applying machine learning models. Features enhance the accuracy of models by introducing new information, or distilling already existing information.&lt;/p&gt;
+&lt;p&gt;For example, the hr column in bike_rentals contains hours that the bikes are rented for, from 1 to 24. A machine will treat each hour differently, and not understand that certain hours are related. We can flip this around by creating a new column with labels for morning, afternoon, evening, and night. This will bundle up similar times together, and enable our model to make better decisions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [119]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;assign_label&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hour&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;hour&lt;/span&gt; &lt;span class="o"&gt;&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;hour&lt;/span&gt; &lt;span class="o"&gt;&lt;&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
+    &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;hour&lt;/span&gt; &lt;span class="o"&gt;&gt;=&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;hour&lt;/span&gt; &lt;span class="o"&gt;&lt;&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+    &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;hour&lt;/span&gt; &lt;span class="o"&gt;&gt;=&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;hour&lt;/span&gt; &lt;span class="o"&gt;&lt;&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+    &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;hour&lt;/span&gt; &lt;span class="o"&gt;&gt;=&lt;/span&gt; &lt;span class="mi"&gt;18&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;hour&lt;/span&gt; &lt;span class="o"&gt;&lt;=&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+
+&lt;span class="n"&gt;bikerentals&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"time_label"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bikerentals&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"hr"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apply&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;assign_label&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [120]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;bikerentals&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[120]:&lt;/div&gt;
+&lt;div class="output_html rendered_html output_subarea output_execute_result"&gt;
+&lt;div&gt;
+&lt;table border="1" class="dataframe"&gt;
+&lt;thead&gt;
+&lt;tr style="text-align: right;"&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;instant&lt;/th&gt;
+&lt;th&gt;dteday&lt;/th&gt;
+&lt;th&gt;season&lt;/th&gt;
+&lt;th&gt;yr&lt;/th&gt;
+&lt;th&gt;mnth&lt;/th&gt;
+&lt;th&gt;hr&lt;/th&gt;
+&lt;th&gt;holiday&lt;/th&gt;
+&lt;th&gt;weekday&lt;/th&gt;
+&lt;th&gt;workingday&lt;/th&gt;
+&lt;th&gt;weathersit&lt;/th&gt;
+&lt;th&gt;temp&lt;/th&gt;
+&lt;th&gt;atemp&lt;/th&gt;
+&lt;th&gt;hum&lt;/th&gt;
+&lt;th&gt;windspeed&lt;/th&gt;
+&lt;th&gt;casual&lt;/th&gt;
+&lt;th&gt;registered&lt;/th&gt;
+&lt;th&gt;cnt&lt;/th&gt;
+&lt;th&gt;time_label&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;th&gt;0&lt;/th&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2011-01-01&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.24&lt;/td&gt;
+&lt;td&gt;0.2879&lt;/td&gt;
+&lt;td&gt;0.81&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2011-01-01&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.22&lt;/td&gt;
+&lt;td&gt;0.2727&lt;/td&gt;
+&lt;td&gt;0.80&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;2011-01-01&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.22&lt;/td&gt;
+&lt;td&gt;0.2727&lt;/td&gt;
+&lt;td&gt;0.80&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;27&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;2011-01-01&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.24&lt;/td&gt;
+&lt;td&gt;0.2879&lt;/td&gt;
+&lt;td&gt;0.75&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th&gt;4&lt;/th&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;2011-01-01&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0.24&lt;/td&gt;
+&lt;td&gt;0.2879&lt;/td&gt;
+&lt;td&gt;0.75&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2&gt; Train &amp; Test Data &lt;/h2&gt;&lt;p&gt;Before we  apply machine learning algorithms, we will need to split the data into training and testing sets. This enables to train an algorithm using the training data set and evaluate its accuracy on the test data set. An unrealistically low error value can arise due to overfitting if an algorithm is trained on the training data and evaluated for performance on the same data.&lt;/p&gt;
+&lt;p&gt;80% of the rows in bikerentals will be considered as part of the trainign set. The rest will become part of the testing set.&lt;/p&gt;
+&lt;p&gt;&lt;h2&gt; Error Metric &lt;/h2&gt;
+Mean squared error seems like a good fit to evaluate our data against as it works well on continuous numeric data, which our dataset is.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [121]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;train&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bikerentals&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sample&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;frac&lt;/span&gt;&lt;span class="o"&gt;=.&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;test&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bikerentals&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loc&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="n"&gt;bikerentals&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;isin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2&gt; First Attempt to Model, using Linear Regression &lt;/h2&gt;&lt;p&gt;As a first pass, linear regression should work decently well on our data, given that many of the columns are correlated with &lt;i&gt; cnt &lt;/i&gt;.  Linear regression works well when predictors are independent, and don't change meaning when combined with each other. It is fairly resistant to overfitting because it is simple, but it can be prone to underfitting the data, and not building a powerful enough model.&lt;/p&gt;
+&lt;p&gt;We are ignoring the &lt;i&gt;casual&lt;/i&gt; and &lt;i&gt;registered&lt;/i&gt; columns because &lt;i&gt;cnt&lt;/i&gt; is derived from these columns. If we are trying to predict the number of people who rent bikes in a given hour, it doesn't make sense that we already know the casual or registered riders, because those numbers are added together to get cnt.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [122]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.linear_model&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;LinearRegression&lt;/span&gt;
+&lt;span class="n"&gt;predictors&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;predictors&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"cnt"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;predictors&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"casual"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;predictors&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"registered"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;predictors&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"dteday"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;lr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LinearRegression&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;lr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;train&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;predictors&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;train&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"cnt"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[122]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;LinearRegression(copy_X=True, fit_intercept=True, n_jobs=1, normalize=False)&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [123]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;predictions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;lr&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;predictors&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="n"&gt;mse&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;predictions&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"cnt"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mse&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;17126.94869869201
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [124]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"cnt"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt"&gt;&lt;/div&gt;
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;6          2
+19        37
+20        36
+30         1
+34        70
+36        75
+37        59
+47         5
+48         2
+51        30
+67        20
+70         2
+72         2
+94         2
+100      115
+108      190
+111       89
+115       11
+123      122
+133      112
+134       69
+149       59
+154      187
+158       39
+165        1
+167        2
+171       61
+175       95
+187       11
+189        1
+        ... 
+17199    124
+17205     26
+17208     23
+17210     12
+17215      1
+17216      3
+17236      7
+17240     11
+17243     31
+17245      8
+17253     43
+17259      3
+17268    133
+17269     75
+17272    118
+17280     63
+17296    222
+17298    225
+17308     37
+17310      6
+17314     18
+17326     97
+17334     15
+17341    122
+17345    160
+17352     47
+17354     49
+17358      1
+17369    247
+17371    214
+Name: cnt, dtype: int64
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2&gt; Results &lt;/h2&gt;&lt;p&gt;We have a large error, and this is probably due to the fact that the data has some few extremely high rental counts, but mostly low counts otherwise. The larger the error the more it is penalized with mean squared error. This gives a net higher total error.&lt;/p&gt;
+&lt;h2&gt; Applying Decision Trees &lt;/h2&gt;&lt;p&gt;Let's try our hand at applying decision trees. Decision trees are a fairly complex model, but they tend to predict outcomes much more reliably than linear regression. Owing to their complexity they also tend to overfit, particularly when parameters such as maximum depth and minimum number of samples per leaf aren't tweaked. Decision trees can be sensitive, where small changes in input data can result in a very different output model. Let's try with min_samples_leaf = 5 first.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [125]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.tree&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;DecisionTreeRegressor&lt;/span&gt;
+&lt;span class="n"&gt;dt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;DecisionTreeRegressor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;min_samples_leaf&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;dt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;train&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;predictors&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;train&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"cnt"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[125]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;DecisionTreeRegressor(criterion='mse', max_depth=None, max_features=None,
+           max_leaf_nodes=None, min_samples_leaf=5, min_samples_split=2,
+           min_weight_fraction_leaf=0.0, presort=False, random_state=None,
+           splitter='best')&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [126]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;predictions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;predictors&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;predictions&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"cnt"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[126]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;2468.692859622464&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Now let's try with n_sampels_leaf = 2.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [127]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;dt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;DecisionTreeRegressor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;min_samples_leaf&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;dt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;train&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;predictors&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;train&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"cnt"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[127]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;DecisionTreeRegressor(criterion='mse', max_depth=None, max_features=None,
+           max_leaf_nodes=None, min_samples_leaf=2, min_samples_split=2,
+           min_weight_fraction_leaf=0.0, presort=False, random_state=None,
+           splitter='best')&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [128]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;predictions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;reg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;predictors&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;predictions&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"cnt"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[128]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;881.6803957294475&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2&gt; Results &lt;/h2&gt;&lt;p&gt;The decision tree regressors seem to have a much higher accuracy than our linear regression model.&lt;/p&gt;
+&lt;h2&gt; Applying Random Forests &lt;/h2&gt;&lt;p&gt;We now apply the  random forests algorithm. Random forests tend to be more accurate than simple models like linear regression.  They tend to overfit much less than decision trees because of how they are constructed. Nonetheless,  they can still be prone to overfitting, and therefore tuning parameters such as maximum depth and minimum samples per leaf are important.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [129]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.ensemble&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;RandomForestRegressor&lt;/span&gt;
+
+&lt;span class="n"&gt;rf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;RandomForestRegressor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;min_samples_leaf&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;rf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;train&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;predictors&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;train&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"cnt"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[129]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;RandomForestRegressor(bootstrap=True, criterion='mse', max_depth=None,
+           max_features='auto', max_leaf_nodes=None, min_samples_leaf=2,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           n_estimators=10, n_jobs=1, oob_score=False, random_state=None,
+           verbose=0, warm_start=False)&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [130]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;predictions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;rf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;predictors&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;predictions&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"cnt"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+&lt;div class="output_area"&gt;&lt;div class="prompt output_prompt"&gt;Out[130]:&lt;/div&gt;
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;1824.4148077364828&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;
+&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2&gt; Results &lt;/h2&gt;&lt;p&gt;Upon computation we find that our random forests model with min_samples_leaf=2 gives a MSE of ~1824.41. We can play around and try modelling with other values of min_samples_leaf to see if we can minimise our error.&lt;/p&gt;
+&lt;h2&gt; Next Steps &lt;/h2&gt;&lt;p&gt;Some of the potential next steps could be :&lt;/p&gt;
+&lt;ui&gt;
+&lt;li&gt; Calculating more features, e.g. combining temperature, humidity and wind speed. &lt;/li&gt;
+&lt;li&gt; Try predicting casual and registered riders instead of total numer of riders and see how our models fit &lt;/li&gt;
+&lt;/ui&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;
+</summary><category term="Decision Trees"></category><category term="Random Forests"></category><category term="Machine Learning"></category></entry></feed>

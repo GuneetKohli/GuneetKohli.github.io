@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Far Beyond Data</title><link href="https://GuneetKohli.github.io/" rel="alternate"></link><link href="https://GuneetKohli.github.io/feeds/recommender-systems.atom.xml" rel="self"></link><id>https://GuneetKohli.github.io/</id><updated>2016-06-08T20:00:00-07:00</updated><entry><title>A music recommender - making sense of 24 million user plays from 1.6 million unique artists using Apache Spark.</title><link href="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/" rel="alternate"></link><published>2016-06-08T20:00:00-07:00</published><author><name>Guneet Singh Kohli</name></author><id>tag:GuneetKohli.github.io,2016-06-08:recommender-systems/MusicRecommender/</id><summary type="html">&lt;p&gt;&lt;center&gt;&lt;em&gt;Data applications are like sausages. It is better not to see them being made&lt;/em&gt; - Otto von Bismarck&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;A lot of times when people ask me what I'm upto these days the short answer of 'data science/machine learning' sounds mighty impressive, but usually leaves people puzzled when they try and put their finger on it. Even the initiated sometimes have trouble defining what the words exactly mean. For all of my intellectual pursuits, as a wise man once said, I swing by the notion that if you can't explain it to your grandmother you don't understand it well enough. Given the complexities that more often than not plague most of the said intellectual endevaours, a half baked, modern twist on the saying works even better. Please explain to me as you might to a child, or a golden retriever. &lt;/p&gt;
+&lt;p&gt;The example that works best for me is, you know how Amazon will show and recommend you stuff like the things you have browsed and bought? And you end up buying things in addition to what you browsed for? That is data science/machine learning going down. In the flesh. Simple.&lt;/p&gt;
+&lt;p&gt;Recommender engines are machine learning examples which everyone understands and they are all around us, like Netflix, Amazon, Youtube etc. It's fun to observe them even, say when Spotify recommends you this cool new artist because it saw you listening to The Black Keys. We see it communicating and interacting with us, although that might not always be the case. An example of a recommendation engine which might be a little furtive is Gmail deciding whether an incoming mail is spam or not.&lt;/p&gt;
+&lt;p&gt;A music recommender is even more exciting because it is tangible. Even though music taste is so personal and inexplicable, modern recommenders do a good job of suggesting tracks we did not know we would like. &lt;/p&gt;
+&lt;h2&gt;The Data Set&lt;/h2&gt;
+&lt;p&gt;The dataset for this recommender is published by Audioscrobbler, the music recommendation system for last.fm. Last.fm was one of the first modern Internet streaming radio sites which gained rapid popularity in the mid-2000s. Audioscrobbler provided the capabilties  for scrobbling or recording user's plays of songs. Last.fm relied on this information to make recommendations to users about artists and songs they might like. &lt;/p&gt;
+&lt;p&gt;The dataset is interesting, because when last.fm was blowing up most recommendation engines relied on rating-like data. They ingested inputs like - Guneet gave Metallica 4/5. This is where Audioscrobbler got interesting because it simply recorded plays. The familiar - "Guneet played Walk by Pantera". We should be careful here and realize that ratings and plays carry different meanings. Just because I played a track does not neccesarrily mean I actually liked it. A lot of times you would play anything and just be doing your daily chores. The catch is that a listener is much more likely to play music than to give an actual rating. Therefore scrobbled data is MUCH larger and covers more users and artists. That is a lot more information than a rating data set even though each individual point would carry less of the same. &lt;/p&gt;
+&lt;p&gt;A snapshot of such a scrobbled music data is what we are looking at. It was published by last.fm in 2005 and can be found &lt;a href="http://bit.ly/1KiJdOR"&gt;here&lt;/a&gt;. The main data is in the user_artist_data.txt file.&lt;/p&gt;
+&lt;p&gt;Essentially, what we are looking at is - &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;141,000 unique users&lt;/li&gt;
+&lt;li&gt;1.6 million unique artists&lt;/li&gt;
+&lt;li&gt;24.2 million users &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;What we also have are the artist_data.txt and artist_alias.txt files. The former gives the name of artist by ID, the latter maps artist IDs that are known misspellings or variants to the canonical artist ID. Say, "The Corrs", "Corrs", "the corrs" may appear as distinct artist IDs in the data set, even though they are the same. &lt;/p&gt;
+&lt;p&gt;Since we are looking at some big numbers here, I thought to run the analysis on an AWS cluster using Apache Hadoop and  Spark. A LOT of this was also experimented and worked on my local Macbook running Spark on VMware. &lt;/p&gt;
+&lt;h2&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;This has also been my first foray in getting comfortable with Scala, hence some screenshots have been taken over a period of time and improved on. It's been a great learning experience and I owe a lot to the powerful Sean Owen, Sandy Ryza, Vincent Singhania and Scooby.  Apache Spark offers a Python wrapper, PySpark, but my motivation to use Scala was manyfold, namely - &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;I wanted to learn a new language! &lt;/li&gt;
+&lt;li&gt;The Spark framework is written in Scala. This offers a number of advantages, such as reduced performance overhead      and access to all of spark's access libraries. &lt;/li&gt;
+&lt;li&gt;Understand what's going down under the hood, ala "think in Spark".&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Last but not the least, this has also been a selfish venture of sorts. To make things clear, I was an avid last.fm user during 2004-2008. My own personal scrobbled data is in there! &lt;/p&gt;
+&lt;h2&gt;The Recommender Algorithm&lt;/h2&gt;
+&lt;p&gt;The data consists entirely of interactions between users and artists songs, but has no user and artist information other than their names. We need an algorithm that would learn without access to either user or artist attributes. Collaborative filtering algorithms meet this criteria. Collaborative filtering would decide that two users may both like the same song because they play many other same songs. Deciding that two users might have similar music tastes because they are of the same age is not example that would come under this umbrella. &lt;/p&gt;
+&lt;p&gt;We use an &lt;strong&gt;alternating least squares&lt;/strong&gt; (ALS) recommender here. It is a type of matrix factorization model. We treat the user and product data as if it were a large matrix A, where an entry at row &lt;em&gt;i&lt;/em&gt; and column &lt;em&gt;j&lt;/em&gt; exists if user &lt;em&gt;i&lt;/em&gt; has played artist &lt;em&gt;j&lt;/em&gt;. A is sparse: owing to only a few off all possible user-artist combinations appearing in the data, most entries are 0. The matrix A can be factored as the matrix product of two smaller matrices X and Y. Both of them have many rows because A has many rows and columns, but just a few columns &lt;em&gt;k&lt;/em&gt;. The columns correspond to the latent factors that are being used to explain the interaction data. &lt;/p&gt;
+&lt;p&gt;&lt;center&gt;  A = X Y&lt;sup&gt;T&lt;/sup&gt;  &lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;ALS computes X and Y. We will not going into detail the workings of the algorithm here. The approach was popularized by papers like &lt;a href="http://yifanhu.net/PUB/cf.pdf"&gt;Collaborative Filtering for Implicit Feedback Datasets&lt;/a&gt; and &lt;a href="http://www.grappa.univ-lille3.fr/~mary/cours/stats/centrale/reco/paper/MatrixFactorizationALS.pdf"&gt;Large scale Parallel Collaborative Filtering for the Netflix Prize&lt;/a&gt;. It rose to prominence during the time of the  &lt;a href="https://en.wikipedia.org/wiki/Netflix_Prize"&gt;Netflix Prize&lt;/a&gt;. On 21 September 2009, Bellgor's Pragmatic Chaos Team bested Netflix's own alrogithmic for predicting ratings by ~10% and won the prize worth US $1,00,000. &lt;/p&gt;
+&lt;p&gt;ALS takes advantage of sparsity of the input data and relies on simple and optimized linear algebra. It's data parallel nature makes it very fast at a large scale. And last but not the least, ALS is the only recommender algorithm currently implemented in the Spark machine learning library, haha. &lt;/p&gt;
+&lt;h2&gt;Data Preparation&lt;/h2&gt;
+&lt;p&gt;All three data files are being stored in HDFS. While starting the spark-shell remember to specify &lt;em&gt;--driver-memory 6g&lt;/em&gt; to have sufficient memory to complete these computations. I'm assuming that you are kind of familiar with the Apache Spark environment and know your way around.&lt;/p&gt;
+&lt;p&gt;One limitation of Spark MLib's ALS implementation is that it requires numeric nonnegative 32-bit integers IDs for users and items. This means that IDs larger than about Integer.MAX_VALUE or 2147483647 cannot be used. Let's load up the data and see if this is meet. We access the file as an RDD of Strings with SparkContext's textFile method. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="download" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/download.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;left&gt; &lt;img alt="ReadRdd" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/ReadRdd.png" /&gt; &lt;/left&gt;&lt;/p&gt;
+&lt;p&gt;Each line of the file contains a user ID, an artist ID and a play count, separated by space. We compute statistics on the user and artist IDs using the stats() method.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Stats1" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/Stats1.png" /&gt;
+&lt;img alt="Stats2" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/Stats2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Next lets convert the artist names corresponding to the numeric IDs. artist_data.txt contains the artist ID and name separated by a tab. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="loadartistdata" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/loadartistdata.png" /&gt;
+&lt;img alt="FlatMap" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/FlatMap.png" /&gt;&lt;/p&gt;
+&lt;p&gt;The artist_alias.txt file maps artist IDs that might be misspelled to the canonical artist name. It consists of two IDs per line, separated by a tab. We use it to map incorrect artist IDs to correct ones.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="ArtistAlias" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/ArtistAlias.png" /&gt;&lt;/p&gt;
+&lt;p&gt;The entry 10061700 maps to entry 831. We can look these up from the RDD containg artist names, to see that the particular ID corresponds to the 90s industrial metal powerhouse Nine Inch Nails. We fixed "Nine Inch Nails - And That All..." to the correct artist name "Nine Inch Nails".&lt;/p&gt;
+&lt;p&gt;&lt;img alt="ArtistAliasNIN" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/ArtistAliasNIN.png" /&gt;&lt;/p&gt;
+&lt;h2&gt;Model&lt;/h2&gt;
+&lt;p&gt;Although the dataset is almost in the right form for use with Spark's ALS implementation, we require two transformations. First we should convert all artist IDs to canonical IDs using our aliases data set incase of existence of multiple canonical IDs. Second, the data should be converted into &lt;em&gt;Rating&lt;/em&gt; objects, which is the implementation's abstraction for user-product-value data. Product here refers to artists. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="buildfirstmodel" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/buildfirstmodel.png" /&gt;&lt;/p&gt;
+&lt;p&gt;We used a broadcast variable here, bAlias, for our artist alias. Broadcast variables come in handy when you have a large number of tasks that need to handle the same data structure. It enables caching of data across multiple stages and jobs, saving significant network traffic and memory.&lt;/p&gt;
+&lt;p&gt;The ALS algorithm being iterative, will need to access this data numerous times which is why we use cache() to tell Spark that this particular RDD should be stored temporarily after being computed and keep it in memory in the cluster. If we don't do this the RDD could be computed repeatedly each time it is accessed from the original data. &lt;/p&gt;
+&lt;p&gt;Alright, so FINALLY, we can build the model!&lt;/p&gt;
+&lt;p&gt;&lt;img alt="ALSmodelcall" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/ALSmodelcall.png" /&gt;&lt;/p&gt;
+&lt;p&gt;This operation will take some time to construct our matrix factorization model, simply because the model is huge. We are looking at a feature vector of 10 values for each user and product, and there are around a million and a half of them :) These large user-feature and product-feature  matrices in the model are RDDs of their own. You would notice a bunch of arguments in the trainImplicit() call above, and I'll go into them shortly. We can see some of these feature vectors. Each feature vector is an array of 10 numbers and we print it using mkString(). It translates the arrays into redable form.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="features" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/features.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Alright, who's ready to see some artist recommendations! Let's take a user, extract the artists this user has listened to and print 'em. &lt;/p&gt;
+&lt;p&gt;Let's pick user '2012130' ...&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SpotCheckUser" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/SpotCheckUser.png" /&gt;&lt;/p&gt;
+&lt;p&gt;And collect his unique artists...&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SpotCheckCollect" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/SpotCheckCollect.png" /&gt;&lt;/p&gt;
+&lt;p&gt;And just grab the artist names out of the selection. Print 'em... &lt;/p&gt;
+&lt;p&gt;&lt;img alt="SpotCheckArtistList" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/SpotCheckArtistList.png" /&gt;&lt;/p&gt;
+&lt;p&gt;All of 'em...&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SpotCheckArtistList2" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/SpotCheckArtistList2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Let's make some recommendations for our user - 2012130. 5 recommendations seems like a good number. We will extract out artist IDs and look up the artist names on the basis of the estimate that user will or won't interact with the artist. This estimate is obtained from the ALS algorithm as a rating value between 0 and 1. A higher value wherein translates to a better recommendation. It is not a probability though. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="SpotCheckRecco" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/SpotCheckRecco.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SpotCheckRecommendedProducts" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/SpotCheckRecommendedProducts.png" /&gt;&lt;/p&gt;
+&lt;p&gt;We obtain our 5 recommendations as shown above. It's interesting to note that an 'unknown' artist sneaked into our recommendation. I'll be addressing this shortly when we evaluate the quality of our recommendations. Other than that its a hip-hop heavy recommendation list with 50 Cent, Eminem and Will Smith. &lt;/p&gt;
+&lt;h2&gt;Recommender Quality&lt;/h2&gt;
+&lt;p&gt;Now recommending music is a tricky business. It's pretty subjective and its hard for anyone but the user to evaluate how good the recommendations are. Fair assumptions would assume that the user would tend to play songs from artist who he/she finds appealing and will not play artists who are not. And the plays (scrobbling) would only give us a partial picture of likes and dislikes.&lt;/p&gt;
+&lt;p&gt;The recommender recognises 'good' artists as the artists the user has listened to. What we do not want is the algorithm returning the previously listened to artists to the user and score perfectly. For this scenario we build the ROC (Receiver Operator Characteristic) curve and calculate the area under the curve (AUC). We test our model using hold-out validation. &lt;/p&gt;
+&lt;p&gt;I will not go into the details of the ROC curve and the validation technique, but to summarize it briefly we set aside some of the play data and hide it from the model building process. This held out data is collection of good recommendations which the model will not see. The recommender ranks all items in the model and it's score is calculated by comparing theh ranks of all items and ranks of the all held-out artists. 1 is a perfect score, 0 is the worst and 0.5 would be score achieved from guessing randomly. &lt;/p&gt;
+&lt;p&gt;We divide our dataset into two parts, training (90%) and cross-validation (10%). The model is trained on the training data set only and evaluated against the cross-validation data set. The implementation code for calculating the AUC is complex whereby we are actually computing AUC per user and then a mean value is obtained across all users. AUC may be viewed as a probability that a randomn positive item sores higher than a negative one. We calculate the proportion of all positive-negative pairs that are correctly ranked. The held out data is taken as positive and we create a set of negative products for each user. &lt;/p&gt;
+&lt;p&gt;Let's build up our area under the curve function...
+&lt;img alt="auc" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/auc.png" /&gt;&lt;/p&gt;
+&lt;p&gt;And divide the dataset..
+&lt;img alt="testtrainsplit" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/testtrainsplit.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Cache them.
+&lt;img alt="testtraincache" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/testtraincache.png" /&gt;&lt;/p&gt;
+&lt;p&gt;And create a  new model with the training set...
+&lt;img alt="auctrain" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/auctrain.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Let's finally see how good our recommendations are then...
+&lt;img alt="AUCfunction" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/AUCfunction.png" /&gt;
+&lt;img alt="finalAUCvalue" src="https://GuneetKohli.github.io/recommender-systems/MusicRecommender/images/finalAUCvalue.png" /&gt;&lt;/p&gt;
+&lt;p&gt;We got an AUC value of 0.979. It's definitely higher than 0.5 which would amount to recommending randomnly and pretty close to 1.0 which is the max score. &lt;/p&gt;
+&lt;p&gt;There were a couple of arguments passed to ALS.trainImplicit() aside from the training data. Let's discuss them. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;i&gt;Rank - 10 &lt;/i&gt; &lt;br&gt;
+   This corresponds to latent factors in the model, the number of columns in the product-feature and user-feature        matrices (k).
+   &lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;i&gt;Iterations - 5 &lt;/i&gt; &lt;br&gt;
+   This corresponds to the number of iterations that the factorization runs. It can be thought of as a constraint 
+   trade off between time and better factorization.
+   &lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;i&gt;Lambda - 0.01 &lt;/i&gt; &lt;br&gt;
+   Lambda represents an overfitting parameter. Overfitting can be avoided by higher values but are subject to
+   affecting factorization accuracy.
+   &lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;i&gt;Alpha - 40 &lt;/i&gt; &lt;br&gt;
+   This is responsible for the relative weight of unobserved vs observed user-product interactions in factorization. 
+   A higher alpha tends to make the model more confident about missing data equating to no preference for the
+   particular user item pair. Think of it as the model would focus far more on what the user listened to than what 
+   he/she did not listen to. 40 was a value found to be optimum by experimenting in this case and is also
+   recommended as a default by ALS documentation. 
+   &lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Choosing ideal values for these parameters for the desired scenario is a common task in machine learning. One of the common ways to deal with this is simply trial and error and going with the hyperparameter set that produces the best results.&lt;/p&gt;
+&lt;p&gt;Interestingly we observed an 'unknown' artist as one of the recommendations. Obviously, 'unknown' is not an artist, and we should discard all 'unknown' artist occurences in the dataset to fine tune our model. Our recommendations are as good as the data we have, which is why the bulk of the time of most data science endeavors is spent in cleaning the dataset. &lt;/p&gt;
+&lt;h2&gt;Next Steps&lt;/h2&gt;
+&lt;p&gt;We can spend some more time fine tuning our model by experimenting with different hyperparameters and removing anomalies in the data such as the 'unknown' artist. We can use the above scenario to also recommend users to artists. It can help us answer some really cool questions like what group of users would be the most interested in ,say, the new DMX album. This can be done by reading the artist as a user to recommend to, and the user as an artist.&lt;/p&gt;
+&lt;p&gt;As of now we can recommend to one user at a time using Spark Mllib's ALS implementation. However, we can rapidly compute recommendations for a group of users as part of multiple jobs, each of which take a few seconds to run. For faster lookups at runtime these recommendations can be written to an external NoSQL data store like HBase. Recommendations can be precomputed for all possible users and stored. But let's say if only a portion of the total users visit the site everyday, precomputing recommendations for all users (~millions) is a lot of wasted effort. Real-time recommendation systems are a way around this and utilize other modelling technique which are faster to implement. &lt;/p&gt;</summary><category term="Music Recommendation"></category><category term="Spark"></category><category term="Collaborative Filtering"></category></entry></feed>

@@ -2,6 +2,65 @@ body {
     padding-top: 70px;
 }
 
+/* Archived / frozen-in-time notice */
+.archive-notice {
+    background: linear-gradient(180deg, #fbf7ec 0%, #f5eeda 100%);
+    border-top: 3px solid #b08d57;
+    border-bottom: 1px solid #e4d8bd;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+}
+
+.archive-notice-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 17px 20px;
+    text-align: center;
+    color: #5f5744;
+    font-size: 17px;
+    line-height: 1.55;
+}
+
+.archive-notice .archive-tag {
+    display: inline-block;
+    background: #8a6d3b;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 11px;
+    border-radius: 4px;
+    margin-right: 13px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.archive-notice .archive-tag i {
+    margin-right: 6px;
+}
+
+.archive-notice .archive-msg {
+    vertical-align: middle;
+}
+
+.archive-notice .archive-msg strong {
+    color: #463f2e;
+    font-weight: 600;
+}
+
+@media (max-width: 650px) {
+    .archive-notice-inner {
+        font-size: 15px;
+        padding: 14px 15px;
+    }
+    .archive-notice .archive-tag {
+        display: block;
+        width: -webkit-max-content;
+        width: max-content;
+        margin: 0 auto 9px;
+    }
+}
+
 #sidebar .list-group, #sidebar .list-group-item {
     background-color: transparent;
 }
@@ -47,6 +106,11 @@ body {
     padding-bottom: 5px;
     -ms-word-break: normal;
     word-break: normal;
+    overflow-wrap: normal;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
 }
 
 #sidebar {

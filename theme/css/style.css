@@ -4,15 +4,20 @@ body {
 
 /* Archived / frozen-in-time notice */
 .archive-notice {
-    background: #26221c;
-    border-top: 3px solid #e0a63e;
-    border-bottom: 1px solid #3a352c;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    margin: 24px 0 28px;
 }
 
 .archive-notice-inner {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 16px 20px;
+    max-width: 780px;
+    background: #26221c;
+    border: 1px solid #3a352c;
+    border-top: 3px solid #e0a63e;
+    border-radius: 9px;
+    box-shadow: 0 12px 28px -14px rgba(0, 0, 0, 0.5);
+    padding: 15px 30px;
     text-align: center;
     color: #e9e2d2;
     font-size: 16.5px;
@@ -22,11 +27,11 @@ body {
 .archive-notice .archive-mark {
     color: #e6a63a;
     text-transform: uppercase;
-    letter-spacing: 0.22em;
-    font-size: 12px;
+    letter-spacing: 0.18em;
+    font-size: 14.5px;
     font-weight: 700;
-    margin-right: 15px;
-    padding-right: 15px;
+    margin-right: 16px;
+    padding-right: 16px;
     border-right: 1px solid rgba(230, 166, 58, 0.45);
     vertical-align: middle;
     white-space: nowrap;
